@@ -4,6 +4,7 @@
 
 단축키 검색 및 관리 웹 애플리케이션입니다. 현재 Figma와 IntelliJ IDEA의 단축키를 지원합니다.
 
+[링크](https://shortcut-cheatsheet.vercel.app/)를 클릭해서 확인해주세요
 ## feature
 
 - 카테고리별 단축키 목록 보기
