@@ -1,15 +1,21 @@
-import { useEffect, useState, useCallback } from 'react';
-import { allShortcuts } from '../data/shortcuts';
-import type { Shortcut } from '../types/shortcut';
-import ShortcutSearch from './ShortcutSearch';
-import { ShortcutList } from './ShortcutList';
+import { useEffect, useState, useCallback } from "react";
+import { allShortcuts } from "../data/shortcuts";
+import type { Shortcut } from "../types/shortcut";
+import ShortcutSearch from "./ShortcutSearch";
+import { ShortcutList } from "./ShortcutList";
 
-export default function ShortcutCheatsheet({ selectedCategory }: { selectedCategory: string }) {
+export default function ShortcutCheatsheet({
+  selectedCategory
+}: {
+  selectedCategory: string;
+}) {
   const [filtered, setFiltered] = useState<Shortcut[]>(
-    allShortcuts.filter(s => s.category === selectedCategory)
+    allShortcuts.filter((s) => s.category === selectedCategory)
   );
 
-  const categoryShortcuts = allShortcuts.filter(s => s.category === selectedCategory);
+  const categoryShortcuts = allShortcuts.filter(
+    (s) => s.category === selectedCategory
+  );
 
   useEffect(() => {
     setFiltered(categoryShortcuts);

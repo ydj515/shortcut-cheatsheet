@@ -1,4 +1,4 @@
-export type ShortcutCategory = 'intellij' | 'figma';
+export type ShortcutCategory = "intellij" | "figma";
 
 export interface Shortcut {
   category: ShortcutCategory;
@@ -10,4 +10,4 @@ export interface Shortcut {
 
 export interface ShortcutGroup {
   [category: string]: Shortcut[];
-} 
+}

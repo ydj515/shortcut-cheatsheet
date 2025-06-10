@@ -1,4 +1,4 @@
-import type { Shortcut } from '../types/shortcut';
+import type { Shortcut } from "../types/shortcut";
 
 interface ShortcutListProps {
   shortcuts: Shortcut[];
@@ -6,7 +6,7 @@ interface ShortcutListProps {
 
 export const ShortcutList = ({ shortcuts }: ShortcutListProps) => {
   if (!shortcuts) return null;
-  
+
   const grouped = shortcuts.reduce((acc, item) => {
     acc[item.category] = [...(acc[item.category] || []), item];
     return acc;
@@ -28,8 +28,8 @@ export const ShortcutList = ({ shortcuts }: ShortcutListProps) => {
                   <span className="text-gray-500">Mac:</span> <kbd>{mac}</kbd>
                 </div>
                 <div>
-                  <span className="text-gray-500">Win:</span>{' '}
-                  <kbd>{win || '-'}</kbd>
+                  <span className="text-gray-500">Win:</span>{" "}
+                  <kbd>{win || "-"}</kbd>
                 </div>
               </div>
             </div>
@@ -38,4 +38,4 @@ export const ShortcutList = ({ shortcuts }: ShortcutListProps) => {
       ))}
     </div>
   );
-} 
+};

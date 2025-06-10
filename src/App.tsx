@@ -1,20 +1,19 @@
-import { useState } from 'react';
-import { NavigationBar } from './components/NavigationBar';
-import ShortcutCheatsheet from './components/ShortcutCheatsheet';
-
+import { useState } from "react";
+import { NavigationBar } from "./components/NavigationBar";
+import ShortcutCheatsheet from "./components/ShortcutCheatsheet";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('figma');
+  const [selectedCategory, setSelectedCategory] = useState("figma");
 
   return (
     <div className="flex h-screen">
-      <NavigationBar 
+      <NavigationBar
         selectedCategoryId={selectedCategory}
-        onSelectCategory={setSelectedCategory} 
+        onSelectCategory={setSelectedCategory}
       />
       <main className="flex-1 overflow-auto">
-      <ShortcutCheatsheet selectedCategory={selectedCategory} />
-    </main>
+        <ShortcutCheatsheet selectedCategory={selectedCategory} />
+      </main>
     </div>
   );
 }
