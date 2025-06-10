@@ -1,5 +1,7 @@
 # Shortcut Repository
 
+온보딩 및 협업을 위해 생성하였습니다.
+
 단축키 검색 및 관리 웹 애플리케이션입니다. 현재 Figma와 IntelliJ IDEA의 단축키를 지원합니다.
 
 ## feature
