@@ -217,14 +217,14 @@ export const figmaShortcuts: Shortcut[] = [
   {
     category: "figma",
     action: "컴포넌트 만들기",
-    mac: "⌘ + Option + K",
+    mac: "⌘ + option + K",
     win: "Ctrl + Alt + K",
     keywords: ["component", "create component"]
   },
   {
     category: "figma",
     action: "컴포넌트 분리",
-    mac: "⌘ + Option + B",
+    mac: "⌘ + option + B",
     win: "Ctrl + Alt + B",
     keywords: ["component", "detach", "ungroup component"]
   },
@@ -238,7 +238,7 @@ export const figmaShortcuts: Shortcut[] = [
   {
     category: "figma",
     action: "라이브러리 열기",
-    mac: "⌘ + Option + O",
+    mac: "⌘ + option + O",
     win: "Ctrl + Alt + O",
     keywords: ["library", "open library", "component library"]
   },
@@ -252,35 +252,35 @@ export const figmaShortcuts: Shortcut[] = [
   {
     category: "figma",
     action: "간격 조절",
-    mac: "Option + ↑/↓",
+    mac: "option + ↑/↓",
     win: "Alt + ↑/↓",
     keywords: ["spacing", "adjust spacing", "gap"]
   },
   {
     category: "figma",
     action: "패딩 조절",
-    mac: "⌘ + Option + ↑/↓",
+    mac: "⌘ + option + ↑/↓",
     win: "Ctrl + Alt + ↑/↓",
     keywords: ["padding", "adjust padding"]
   },
   {
     category: "figma",
     action: "좌측 정렬",
-    mac: "Option + A",
+    mac: "option + A",
     win: "Alt + A",
     keywords: ["align", "left align"]
   },
   {
     category: "figma",
     action: "가운데 정렬",
-    mac: "Option + H",
+    mac: "option + H",
     win: "Alt + H",
     keywords: ["align", "center align", "horizontal align"]
   },
   {
     category: "figma",
     action: "상하 정렬",
-    mac: "Option + W",
+    mac: "option + W",
     win: "Alt + W",
     keywords: ["align", "vertical align", "top bottom align"]
   },
@@ -391,7 +391,151 @@ export const figmaShortcuts: Shortcut[] = [
   }
 ];
 
+export const vscodeShortcuts: Shortcut[] = [
+  {
+    category: "vscode",
+    action: "문제 자동 수정",
+    mac: "⌘ + .",
+    win: "ctrl + .",
+    keywords: ["quick fix", "auto fix", "문제 해결"]
+  },
+  {
+    category: "vscode",
+    action: "자동 정렬",
+    mac: "⇧ + option + F",
+    win: "⇧ + alt + F",
+    keywords: ["format", "코드 정렬", "pretty", "code"]
+  },
+  {
+    category: "vscode",
+    action: "파일 탐색기 열기/닫기",
+    mac: "⌘ + B",
+    win: "ctrl + B",
+    keywords: ["sidebar", "explorer", "파일 트리", "file"]
+  },
+  {
+    category: "vscode",
+    action: "전체 선택",
+    mac: "⌘ + A",
+    win: "ctrl + A",
+    keywords: ["select all"]
+  },
+  {
+    category: "vscode",
+    action: "찾기",
+    mac: "⌘ + F",
+    win: "ctrl + F",
+    keywords: ["search", "find"]
+  },
+  {
+    category: "vscode",
+    action: "찾아서 바꾸기",
+    mac: "⌘ + option + F",
+    win: "ctrl + H",
+    keywords: ["replace"]
+  },
+  {
+    category: "vscode",
+    action: "전체 프로젝트에서 찾기",
+    mac: "⌘ + ⇧ + F",
+    win: "ctrl + ⇧ + F",
+    keywords: ["global search"]
+  },
+  {
+    category: "vscode",
+    action: "명령어 팔레트 열기",
+    mac: "⌘ + ⇧ + P",
+    win: "ctrl + ⇧ + P",
+    keywords: ["command palette", "명령어"]
+  },
+  {
+    category: "vscode",
+    action: "터미널 열기",
+    mac: "ctrl + `",
+    win: "ctrl + `",
+    keywords: ["terminal", "터미널"]
+  },
+  {
+    category: "vscode",
+    action: "파일 열기",
+    mac: "⌘ + P",
+    win: "ctrl + P",
+    keywords: ["go to file", "파일 검색"]
+  },
+  {
+    category: "vscode",
+    action: "줄 복사",
+    mac: "⇧ + option + ↓ / ↑",
+    win: "⇧ + alt + ↓ / ↑",
+    keywords: ["duplicate line"]
+  },
+  {
+    category: "vscode",
+    action: "줄 이동",
+    mac: "option + ↓ / ↑",
+    win: "alt + ↓ / ↑",
+    keywords: ["move line"]
+  },
+  {
+    category: "vscode",
+    action: "주석 토글",
+    mac: "⌘ + /",
+    win: "ctrl + /",
+    keywords: ["toggle comment", "주석"]
+  },
+  {
+    category: "vscode",
+    action: "멀티 커서(같은 단어 선택)",
+    mac: "⌘ + D",
+    win: "ctrl + D",
+    keywords: ["multi cursor", "select next"]
+  },
+  {
+    category: "vscode",
+    action: "파일 저장",
+    mac: "⌘ + S",
+    win: "ctrl + S",
+    keywords: ["save"]
+  },
+  {
+    category: "vscode",
+    action: "전체 저장",
+    mac: "⌘ + option + S",
+    win: "ctrl + K, S",
+    keywords: ["save all"]
+  },
+  {
+    category: "vscode",
+    action: "새 터미널 열기",
+    mac: "ctrl + ⇧ + `",
+    win: "ctrl + ⇧ + `",
+    keywords: ["new terminal"]
+  },
+  {
+    category: "vscode",
+    action: "미니맵 켜기/끄기",
+    mac: "⌘ + ⇧ + P → 'toggle minimap'",
+    win: "ctrl + ⇧ + P → 'toggle minimap'",
+    keywords: ["minimap"]
+  },
+  {
+    category: "vscode",
+    action: "이전 커서 위치로 이동",
+    mac: "ctrl + -",
+    win: "alt + ←",
+    keywords: ["go back", "cursor history"]
+  },
+  {
+    category: "vscode",
+    action: "다음 커서 위치로 이동",
+    mac: "ctrl + ⇧ + -",
+    win: "alt + →",
+    keywords: ["go forward", "cursor history"]
+  }
+];
+
 export const allShortcuts: Shortcut[] = [
   ...intellijShortcuts,
+  ...vscodeShortcuts,
   ...figmaShortcuts
 ];

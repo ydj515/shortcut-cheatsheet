@@ -65,7 +65,7 @@ export default function ShortcutSearch({
   return (
     <input
       type="text"
-      placeholder="단축키 검색 (예: 자동완성, ⌘ + N)"
+      placeholder="단축키 검색 (예: 다음 커서, cursor, ⌘ + ])"
       value={query}
       onChange={handleChange}
       onKeyDown={handleKeyDown}

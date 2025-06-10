@@ -3,7 +3,7 @@ import { NavigationBar } from "./components/NavigationBar";
 import ShortcutCheatsheet from "./components/ShortcutCheatsheet";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState("figma");
+  const [selectedCategory, setSelectedCategory] = useState("intellij");
 
   return (
     <div className="flex h-screen">
