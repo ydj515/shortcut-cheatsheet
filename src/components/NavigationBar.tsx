@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { categories } from "../data/categories";
 
 type NavigationBarProps = {
@@ -12,7 +13,14 @@ export const NavigationBar = ({
   return (
     <nav className="w-64 bg-gray-50 border-r border-gray-200 h-screen p-4">
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-800">Shortcuts</h1>
+        <h1 className="text-xl font-bold text-gray-800">
+          <Link
+            to="/"
+            className="cursor-pointer text-inherit no-underline transition duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.9)]"
+          >
+            Shortcuts
+          </Link>
+        </h1>
       </div>
 
       <ul className="space-y-2">
