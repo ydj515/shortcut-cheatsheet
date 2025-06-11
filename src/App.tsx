@@ -8,11 +8,19 @@ function App() {
 
   return (
     <>
-      <div className="flex h-screen">
-        <NavigationBar
-          selectedCategoryId={selectedCategory}
-          onSelectCategory={setSelectedCategory}
-        />
+      <div className="flex flex-col md:flex-row h-screen min-w-[320px]">
+        <div className="md:hidden">
+          <NavigationBar
+            selectedCategoryId={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
+        </div>
+        <div className="hidden md:block">
+          <NavigationBar
+            selectedCategoryId={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
+        </div>
         <main className="flex-1 overflow-auto">
           <ShortcutCheatsheet selectedCategory={selectedCategory} />
         </main>

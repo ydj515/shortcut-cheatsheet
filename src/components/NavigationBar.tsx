@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { categories } from "../data/categories";
 
@@ -10,36 +11,97 @@ export const NavigationBar = ({
   onSelectCategory,
   selectedCategoryId
 }: NavigationBarProps) => {
-  return (
-    <nav className="w-64 bg-gray-50 border-r border-gray-200 h-screen p-4">
-      <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-800">
-          <Link
-            to="/"
-            className="cursor-pointer text-inherit no-underline transition duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.9)]"
-          >
-            Shortcuts
-          </Link>
-        </h1>
-      </div>
+  const [open, setOpen] = useState(false);
 
-      <ul className="space-y-2">
-        {categories.map((category) => (
-          <li key={category.id}>
-            <button
-              onClick={() => onSelectCategory(category.id)}
-              className={`w-full text-left px-4 py-2 rounded-lg transition-colors
-                ${
-                  selectedCategoryId === category.id
-                    ? "bg-blue-100 text-blue-700"
-                    : "text-gray-600 hover:bg-gray-100"
-                }`}
+  // 메뉴 항목 클릭 시 닫힘
+  const handleSelect = (categoryId: string) => {
+    onSelectCategory(categoryId);
+    setOpen(false);
+  };
+
+  return (
+    <>
+      {/* 모바일: 햄버거 메뉴 */}
+      <div className="md:hidden relative">
+        <div className="flex items-center justify-between p-4 bg-gray-100">
+          <h1 className="text-xl font-bold text-gray-800">
+            <Link
+              to="/"
+              className="cursor-pointer text-inherit no-underline transition duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.9)]"
+              onClick={() => setOpen(false)}
             >
-              {category.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </nav>
+              Shortcuts
+            </Link>
+          </h1>
+          <button
+            className="p-2 text-2xl focus:outline-none transition-transform duration-200"
+            onClick={() => setOpen((prev) => !prev)}
+            aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+          >
+            {open ? (
+              <span className="block transition-transform duration-200 rotate-0">&times;</span>
+            ) : (
+              <span className="block">&#9776;</span>
+            )}
+          </button>
+        </div>
+        <div
+          className={`
+            absolute left-0 top-16 w-full bg-white shadow-md z-50 border-t border-gray-200
+            transition-all duration-300 overflow-hidden
+            ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
+          `}
+          style={{ transitionProperty: "max-height, opacity" }}
+        >
+          <ul className="py-2">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <button
+                  onClick={() => handleSelect(category.id)}
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors
+                    ${
+                      selectedCategoryId === category.id
+                        ? "bg-blue-100 text-blue-700"
+                        : "text-gray-600 hover:bg-gray-100"
+                    }`}
+                >
+                  {category.name}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      {/* 데스크탑: 항상 보임 */}
+      <nav className="hidden md:block w-64 bg-gray-100 p-4 h-screen">
+        <div className="mb-6">
+          <h1 className="text-xl font-bold text-gray-800">
+            <Link
+              to="/"
+              className="cursor-pointer text-inherit no-underline transition duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.9)]"
+            >
+              Shortcuts
+            </Link>
+          </h1>
+        </div>
+        <ul className="space-y-2">
+          {categories.map((category) => (
+            <li key={category.id}>
+              <button
+                onClick={() => onSelectCategory(category.id)}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors
+                  ${
+                    selectedCategoryId === category.id
+                      ? "bg-blue-100 text-blue-700"
+                      : "text-gray-600 hover:bg-gray-100"
+                  }`}
+              >
+                {category.name}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
   );
 };
