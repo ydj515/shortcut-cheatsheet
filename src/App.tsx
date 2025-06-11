@@ -1,20 +1,24 @@
 import { useState } from "react";
 import { NavigationBar } from "./components/NavigationBar";
 import ShortcutCheatsheet from "./components/ShortcutCheatsheet";
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("intellij");
 
   return (
-    <div className="flex h-screen">
-      <NavigationBar
-        selectedCategoryId={selectedCategory}
-        onSelectCategory={setSelectedCategory}
-      />
-      <main className="flex-1 overflow-auto">
-        <ShortcutCheatsheet selectedCategory={selectedCategory} />
-      </main>
-    </div>
+    <>
+      <div className="flex h-screen">
+        <NavigationBar
+          selectedCategoryId={selectedCategory}
+          onSelectCategory={setSelectedCategory}
+        />
+        <main className="flex-1 overflow-auto">
+          <ShortcutCheatsheet selectedCategory={selectedCategory} />
+        </main>
+      </div>
+      <Analytics />
+    </>
   );
 }
 
