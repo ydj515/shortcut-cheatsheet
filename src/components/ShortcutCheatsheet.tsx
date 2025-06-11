@@ -26,7 +26,8 @@ export default function ShortcutCheatsheet({
   }, []);
 
   return (
-    <div className="bg-gray-50 text-gray-800 font-sans p-6 max-w-4xl mx-auto">
+    //     <div className="bg-gray-50 text-gray-800 font-sans p-6 max-w-4xl mx-auto w-full h-full">
+    <div className="bg-gray-50 text-gray-800 font-sans p-6 w-full h-full">
       <h1 className="text-3xl font-bold mb-6">단축키 Cheatsheet</h1>
 
       <ShortcutSearch shortcuts={categoryShortcuts} onSearch={handleSearch} />
