@@ -31,10 +31,10 @@ export const intellijShortcuts: Shortcut[] = [
   },
   {
     category: "intellij",
-    action: "전체 찾기",
-    mac: "⌘ + ⇧ + F",
-    win: "ctrl + ⇧ + f",
-    keywords: ["search all"]
+    action: "전체 검색",
+    mac: "Double ⇧ Shift",
+    win: "",
+    keywords: ["search everywhere", "find"]
   },
   {
     category: "intellij",
@@ -161,6 +161,69 @@ export const intellijShortcuts: Shortcut[] = [
     mac: "option + fn + f12",
     win: "alt + f12",
     keywords: ["terminal"]
+  },
+  {
+    category: "intellij",
+    action: "액션 찾기",
+    mac: "⌘ + ⇧ + A",
+    win: "",
+    keywords: ["find action", "command"]
+  },
+  {
+    category: "intellij",
+    action: "코드 이슈 간 이동",
+    mac: "F2 / ⇧ + F2",
+    win: "",
+    keywords: ["navigate", "code issues", "error"]
+  },
+  {
+    category: "intellij",
+    action: "현재 문장 완성",
+    mac: "⌘ + ⇧ + Enter",
+    win: "",
+    keywords: ["complete", "statement"]
+  },
+  {
+    category: "intellij",
+    action: "리팩토링 실행",
+    mac: "^Ctrl T",
+    win: "",
+    keywords: ["refactor", "refactoring"]
+  },
+  {
+    category: "intellij",
+    action: "선택 영역 확장/축소",
+    mac: "option + ↑ / option + ↓",
+    win: "",
+    keywords: ["extend selection", "shrink selection"]
+  },
+  {
+    category: "intellij",
+    action: "라인/블록 주석 추가/제거",
+    mac: "⌘ + / 또는 ⌘ + option + /",
+    win: "",
+    keywords: ["comment", "block comment", "line comment"]
+  },
+  {
+    category: "intellij",
+    action: "선언부로 이동",
+    mac: "⌘ + B",
+    win: "",
+    keywords: ["go to declaration", "declaration"]
+  },
+  {
+    category: "intellij",
+    action: "사용처 찾기",
+    mac: "option + F7",
+    win: "",
+    keywords: ["find usages", "usage"]
+  },
+  {
+    category: "intellij",
+    action: "에디터 포커스",
+    mac: "⎋ Esc",
+    win: "",
+    keywords: ["focus", "editor"]
   }
 ];
 
