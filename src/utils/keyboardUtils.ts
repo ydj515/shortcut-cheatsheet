@@ -1,8 +1,12 @@
+export const isMacOS = (): boolean => {
+  return /Mac|iPod|iPhone|iPad/.test(navigator.userAgent);
+};
+
 export const keyMap = {
-  Meta: "⌘",
+  Meta: isMacOS() ? "⌘" : "Win",
   Control: "Ctrl",
   Shift: "⇧",
-  Alt: "Option"
+  Alt: isMacOS() ? "Option" : "Alt"
 } as const;
 
 export type KeyMapKey = keyof typeof keyMap;
