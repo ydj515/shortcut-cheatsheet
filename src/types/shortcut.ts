@@ -1,4 +1,4 @@
-export type ShortcutCategory = "intellij" | "figma" | "vscode";
+export type ShortcutCategory = "intellij" | "figma" | "vscode" | "excel" | "powerpoint";
 
 export interface Shortcut {
   category: ShortcutCategory;

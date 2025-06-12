@@ -12,5 +12,13 @@ export const categories: Category[] = [
   {
     id: "figma",
     name: "figma"
+  },
+  {
+    id: "excel",
+    name: "excel"
+  },
+  {
+    id: "powerpoint",
+    name: "powerpoint"
   }
 ];

@@ -13,56 +13,56 @@ export const intellijShortcuts: Shortcut[] = [
     action: "자동정렬",
     mac: "⌘ + option + l",
     win: "ctrl + alt + l",
-    keywords: ["format"]
+    keywords: ["format", "auto format", "code format", "code align", "code beautify", "pretty"]
   },
   {
     category: "intellij",
     action: "자동완성",
     mac: "ctrl + space",
     win: "ctrl + space",
-    keywords: ["autocomplete"]
+    keywords: ["autocomplete", "auto complete"]
   },
   {
     category: "intellij",
-    action: "getter, setter, Constructor",
+    action: "generate getter, setter, constructor",
     mac: "⌘ + n",
     win: "alt + insert",
-    keywords: ["generate"]
+    keywords: ["generate", "getter", "setter", "constructor"]
   },
   {
     category: "intellij",
     action: "전체 검색",
-    mac: "Double ⇧ Shift",
+    mac: "Double ⇧ ⇧",
     win: "",
-    keywords: ["search everywhere", "find"]
+    keywords: ["search everywhere", "find", "all"]
   },
   {
     category: "intellij",
     action: "파일 찾기",
     mac: "⌘ + ⇧ + o",
     win: "ctrl + ⇧ + n",
-    keywords: ["file search"]
+    keywords: ["file search", "find file"]
   },
   {
     category: "intellij",
     action: "파일 및 여러가지 찾기",
     mac: "⇧ + ⇧",
     win: "⇧ + ⇧",
-    keywords: ["search"]
+    keywords: ["search", "find"]
   },
   {
     category: "intellij",
     action: "이전 커서",
     mac: "⌘ + [",
     win: "ctrl + alt + ←",
-    keywords: ["cursor back"]
+    keywords: ["cursor back", "go to previous cursor"]
   },
   {
     category: "intellij",
     action: "다음 커서",
     mac: "⌘ + ]",
     win: "ctrl + alt + →",
-    keywords: ["cursor forward"]
+    keywords: ["cursor forward", "go to next cursor"]
   },
   {
     category: "intellij",
@@ -97,35 +97,35 @@ export const intellijShortcuts: Shortcut[] = [
     action: "한줄 삭제",
     mac: "⌘ + backspace",
     win: "ctrl + y",
-    keywords: ["delete line"]
+    keywords: ["delete one line"]
   },
   {
     category: "intellij",
     action: "한줄 복사",
     mac: "⌘ + d",
     win: "ctrl + d",
-    keywords: ["duplicate line", "copy"]
+    keywords: ["duplicate one line", "copy one line"]
   },
   {
     category: "intellij",
     action: "실행",
     mac: "ctrl + r",
     win: "⇧ + f10",
-    keywords: ["run"]
+    keywords: ["run", "execute"]
   },
   {
     category: "intellij",
     action: "상위 implement 찾기",
     mac: "⌘ + u",
     win: "ctrl + ⇧ + b",
-    keywords: ["find super"]
+    keywords: ["find super", "implement"]
   },
   {
     category: "intellij",
     action: "implement 구현된 곳 찾기",
     mac: "⌘ + option + b",
     win: "ctrl + b",
-    keywords: ["go to implementation", "interface"]
+    keywords: ["go to implementation", "interface", "implement"]
   },
   {
     category: "intellij",
@@ -481,7 +481,7 @@ export const vscodeShortcuts: Shortcut[] = [
     action: "전체 선택",
     mac: "⌘ + A",
     win: "ctrl + A",
-    keywords: ["select all"]
+    keywords: ["select all", "find all"]
   },
   {
     category: "vscode",
@@ -537,14 +537,14 @@ export const vscodeShortcuts: Shortcut[] = [
     action: "줄 이동",
     mac: "option + ↓ / ↑",
     win: "alt + ↓ / ↑",
-    keywords: ["move line"]
+    keywords: ["move line", "go to line"]
   },
   {
     category: "vscode",
     action: "주석 토글",
     mac: "⌘ + /",
     win: "ctrl + /",
-    keywords: ["toggle comment", "주석"]
+    keywords: ["toggle comment", "주석", "addcomment"]
   },
   {
     category: "vscode",
@@ -558,7 +558,7 @@ export const vscodeShortcuts: Shortcut[] = [
     action: "파일 저장",
     mac: "⌘ + S",
     win: "ctrl + S",
-    keywords: ["save"]
+    keywords: ["file save"]
   },
   {
     category: "vscode",
@@ -579,7 +579,7 @@ export const vscodeShortcuts: Shortcut[] = [
     action: "미니맵 켜기/끄기",
     mac: "⌘ + ⇧ + P → 'toggle minimap'",
     win: "ctrl + ⇧ + P → 'toggle minimap'",
-    keywords: ["minimap"]
+    keywords: ["minimap", "off", "on"]
   },
   {
     category: "vscode",
@@ -597,8 +597,324 @@ export const vscodeShortcuts: Shortcut[] = [
   }
 ];
 
+export const excelShortcuts: Shortcut[] = [
+  {
+    "category": "excel",
+    "action": "현재 셀 편집",
+    "mac": "ctrl + U",
+    "win": "F2",
+    "keywords": ["edit cell", "cell input"]
+  },
+  {
+    "category": "excel",
+    "action": "자동 채우기 (선택 영역 아래로 복사)",
+    "mac": "⌘ + D",
+    "win": "ctrl + D",
+    "keywords": ["fill down", "copy down"]
+  },
+  {
+    "category": "excel",
+    "action": "오른쪽으로 복사",
+    "mac": "⌘ + R",
+    "win": "ctrl + R",
+    "keywords": ["fill right", "copy right"]
+  },
+  {
+    "category": "excel",
+    "action": "전체 선택",
+    "mac": "⌘ + A",
+    "win": "ctrl + A",
+    "keywords": ["select all", "highlight all"]
+  },
+  {
+    "category": "excel",
+    "action": "새 줄 삽입",
+    "mac": "⌘ + ⇧ + K",
+    "win": "ctrl + ⇧ + +",
+    "keywords": ["insert row", "add row"]
+  },
+  {
+    "category": "excel",
+    "action": "열/행 삭제",
+    "mac": "⌘ + -",
+    "win": "ctrl + -",
+    "keywords": ["delete row", "delete column", "remove row", "remove column"]
+  },
+  {
+    "category": "excel",
+    "action": "현재 날짜 입력",
+    "mac": "ctrl + ;",
+    "win": "ctrl + ;",
+    "keywords": ["insert date", "today", "current date"]
+  },
+  {
+    "category": "excel",
+    "action": "현재 시간 입력",
+    "mac": "ctrl + ⇧ + ;",
+    "win": "ctrl + ⇧ + ;",
+    "keywords": ["insert time", "now", "current time"]
+  },
+  {
+    "category": "excel",
+    "action": "저장",
+    "mac": "⌘ + S",
+    "win": "ctrl + S",
+    "keywords": ["save", "save file", "save as"]
+  },
+  {
+    "category": "excel",
+    "action": "실행 취소",
+    "mac": "⌘ + Z",
+    "win": "ctrl + Z",
+    "keywords": ["undo", "cancel"]
+  },
+  {
+    "category": "excel",
+    "action": "다시 실행",
+    "mac": "⌘ + Y",
+    "win": "ctrl + Y",
+    "keywords": ["redo", "repeat", "redo"]
+  },
+  {
+    "category": "excel",
+    "action": "찾기",
+    "mac": "⌘ + F",
+    "win": "ctrl + F",
+    "keywords": ["find", "search"]
+  },
+  {
+    "category": "excel",
+    "action": "바꾸기",
+    "mac": "⌘ + H",
+    "win": "ctrl + H",
+    "keywords": ["replace", "find and replace"]
+  },
+  {
+    "category": "excel",
+    "action": "새 시트 삽입",
+    "mac": "⇧ + F11",
+    "win": "⇧ + F11",
+    "keywords": ["new sheet", "insert sheet"]
+  },
+  {
+    "category": "excel",
+    "action": "시트 사이 이동 (다음)",
+    "mac": "fn + ctrl + ↓",
+    "win": "ctrl + PageDown",
+    "keywords": ["next sheet", "move sheet"]
+  },
+  {
+    "category": "excel",
+    "action": "시트 사이 이동 (이전)",
+    "mac": "fn + ctrl + ↑",
+    "win": "ctrl + PageUp",
+    "keywords": ["previous sheet", "move sheet"]
+  },
+  {
+    "category": "excel",
+    "action": "선택 영역 테두리 설정",
+    "mac": "⌘ + option + 0",
+    "win": "ctrl + ⇧ + &",
+    "keywords": ["border", "set border"]
+  },
+  {
+    "category": "excel",
+    "action": "서식 복사",
+    "mac": "⌘ + ⇧ + C, ⌘ + ⇧ + V",
+    "win": "ctrl + ⇧ + C, ctrl + ⇧ + V",
+    "keywords": ["copy format", "paste format", "format painter", "copy style", "paste style"]
+  },
+  {
+    "category": "excel",
+    "action": "셀 병합",
+    "mac": "⌘ + option + M",
+    "win": "alt + H + M + M",
+    "keywords": ["merge cells"]
+  },
+  {
+    "category": "excel",
+    "action": "오름차순 정렬",
+    "mac": "ctrl + option + R",
+    "win": "alt + A + S + A",
+    "keywords": ["sort ascending", "sort A to Z", "오름차순"]
+  },
+  {
+    "category": "excel",
+    "action": "내림차순 정렬",
+    "mac": "ctrl + option + R",
+    "win": "alt + A + S + D",
+    "keywords": ["sort descending", "sort Z to A", "내림차순"]
+  },
+  {
+    "category": "excel",
+    "action": "정렬 대화상자 열기",
+    "mac": "fn + ctrl + option + R",
+    "win": "alt + D + S",
+    "keywords": ["custom sort", "sort dialog", "정렬 설정", "sort settings"]
+  },
+    {
+    "category": "excel",
+    "action": "함수 마법사 열기",
+    "mac": "⇧ + F3",
+    "win": "⇧ + F3",
+    "keywords": ["insert function", "함수 삽입"]
+  },
+  {
+    "category": "excel",
+    "action": "합계 함수 자동 입력",
+    "mac": "⌘ + ⇧ + T",
+    "win": "alt + =",
+    "keywords": ["autosum", "sum", "자동 합계"]
+  },
+  {
+    "category": "excel",
+    "action": "수식 계산",
+    "mac": "fn + return",
+    "win": "F9",
+    "keywords": ["calculate formula", "evaluate formula", "계산"]
+  },
+  {
+    "category": "excel",
+    "action": "다음 인수로 이동 (함수 작성 중)",
+    "mac": "ctrl + ,",
+    "win": "ctrl + ,",
+    "keywords": ["function argument", "다음 인수", "next argument"]
+  },
+  {
+    "category": "excel",
+    "action": "셀 수식 표시/숨기기 토글",
+    "mac": "ctrl + `",
+    "win": "ctrl + `",
+    "keywords": ["toggle formula", "수식 보기", "show formula"]
+  }
+];
+
+export const powerpointShortcuts: Shortcut[] = [
+  {
+    "category": "powerpoint",
+    "action": "슬라이드 쇼 시작 (처음부터)",
+    "mac": "⌘ + ⇧ + return",
+    "win": "F5",
+    "keywords": ["start slideshow", "presentation", "슬라이드 쇼", "start slide show"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "슬라이드 쇼 시작 (현재 슬라이드부터)",
+    "mac": "fn + return",
+    "win": "⇧ + F5",
+    "keywords": ["slideshow current", "현재 슬라이드 쇼", "current slide"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "새 슬라이드 삽입",
+    "mac": "⌘ + ⇧ + N",
+    "win": "ctrl + M",
+    "keywords": ["new slide", "insert slide", "슬라이드 추가", "add slide"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "복사",
+    "mac": "⌘ + C",
+    "win": "ctrl + C",
+    "keywords": ["copy", "복사", "duplicate"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "붙여넣기",
+    "mac": "⌘ + V",
+    "win": "ctrl + V",
+    "keywords": ["paste", "붙여넣기", "insert"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "잘라내기",
+    "mac": "⌘ + X",
+    "win": "ctrl + X",
+    "keywords": ["cut", "잘라내기", "remove"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "실행 취소",
+    "mac": "⌘ + Z",
+    "win": "ctrl + Z",
+    "keywords": ["undo", "되돌리기", "cancel"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "다시 실행",
+    "mac": "⌘ + Y",
+    "win": "ctrl + Y",
+    "keywords": ["redo", "다시 실행"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "슬라이드 복제",
+    "mac": "⌘ + D",
+    "win": "ctrl + D",
+    "keywords": ["duplicate slide", "슬라이드 복제", "copy slide"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "슬라이드 삭제",
+    "mac": "fn + delete",
+    "win": "delete",
+    "keywords": ["delete slide", "슬라이드 삭제", "remove slide"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "개체 정렬 - 가운데 정렬",
+    "mac": "option + ⌘ + E",
+    "win": "alt + H + G + A + C",
+    "keywords": ["align center", "가운데 정렬", "center"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "개체 정렬 - 중간 정렬",
+    "mac": "option + ⌘ + M",
+    "win": "alt + H + G + A + M",
+    "keywords": ["align middle", "중간 정렬", "center"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "텍스트 상자 삽입",
+    "mac": "⌘ + ⇧ + X",
+    "win": "alt + N + X",
+    "keywords": ["insert text box", "텍스트 상자"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "도형 삽입",
+    "mac": "⌘ + ⇧ + H",
+    "win": "alt + N + S + H",
+    "keywords": ["insert shape", "도형 삽입"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "슬라이드 간 이동 (이전/다음)",
+    "mac": "fn + ↑ / fn + ↓",
+    "win": "page up / page down",
+    "keywords": ["slide navigation", "다음 슬라이드", "이전 슬라이드", "next slide", "previous slide"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "전체 선택",
+    "mac": "⌘ + A",
+    "win": "ctrl + A",
+    "keywords": ["select all", "전체 선택"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "슬라이드 숨기기",
+    "mac": "⌘ + ⇧ + H",
+    "win": "ctrl + ⇧ + H",
+    "keywords": ["hide slide", "숨기기"]
+  }
+];
+
 export const allShortcuts: Shortcut[] = [
   ...intellijShortcuts,
   ...vscodeShortcuts,
-  ...figmaShortcuts
+  ...figmaShortcuts,
+  ...excelShortcuts,
+  ...powerpointShortcuts
 ];
