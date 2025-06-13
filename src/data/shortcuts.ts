@@ -1035,14 +1035,14 @@ const hangulShortcuts: Shortcut[] = [
     "category": "한글",
     "action": "글머리표 삽입",
     "mac": "-",
-    "win": "ctrl + shift + delete",
+    "win": "ctrl + ⇧ + delete",
     "keywords": ["글머리표", "bullets", "리스트"]
   },
   {
     "category": "한글",
     "action": "텍스트 정렬 (좌/중앙/우)",
     "mac": "-",
-    "win": "ctrl + shift + L / C / R",
+    "win": "ctrl + ⇧ + L / C / R",
     "keywords": ["정렬", "좌측 정렬", "가운데 정렬", "우측 정렬"]
   },
   {
@@ -1063,28 +1063,28 @@ const hangulShortcuts: Shortcut[] = [
     "category": "한글",
     "action": "자간 증/감",
     "mac": "-",
-    "win": "alt + shift + W / N",
+    "win": "alt + ⇧ + W / N",
     "keywords": ["자간", "글자 간격", "간격 조절"]
   },
   {
     "category": "한글",
     "action": "장평 증/감",
     "mac": "-",
-    "win": "alt + shift + K / J",
+    "win": "alt + ⇧ + K / J",
     "keywords": ["장평", "자폭", "글자 너비"]
   },
   {
     "category": "한글",
     "action": "폰트 크기 증/감",
     "mac": "-",
-    "win": "alt + shift + E / R",
+    "win": "alt + ⇧ + E / R",
     "keywords": ["폰트 크기", "글자 크기", "폰트 사이즈"]
   },
   {
     "category": "한글",
     "action": "들여쓰기 설정",
     "mac": "-",
-    "win": "ctrl + shift + F6",
+    "win": "ctrl + ⇧ + F6",
     "keywords": ["들여쓰기", "탭", "문단 들여쓰기"]
   },
   {
@@ -1133,7 +1133,7 @@ const hangulShortcuts: Shortcut[] = [
     "category": "한글",
     "action": "표에서 빠져나오기",
     "mac": "-",
-    "win": "shift + esc",
+    "win": "⇧ + esc",
     "keywords": ["표 나가기", "테이블 종료", "셀 밖으로"]
   }
 ];
