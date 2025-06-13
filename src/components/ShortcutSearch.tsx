@@ -32,7 +32,11 @@ export default function ShortcutSearch({
           s.mac.toLowerCase().includes(lower) ||
           s.win.toLowerCase().includes(lower) ||
           (s.keywords &&
-            s.keywords.some((k) => k.toLowerCase().includes(lower)))
+            s.keywords.some((k) => k.toLowerCase().includes(lower))) ||
+          (lower.startsWith('f') && 
+           /^f[1-9]|f1[0-2]$/.test(lower) && 
+           (s.mac.toLowerCase().includes(lower) || 
+            s.win.toLowerCase().includes(lower)))
       );
       onSearch(filtered);
     },
@@ -41,6 +45,15 @@ export default function ShortcutSearch({
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const key = e.key;
+    
+    // Handle function keys (F1-F12)
+    if (key.startsWith('F') && /^F[1-9]|F1[0-2]$/.test(key)) {
+      e.preventDefault();
+      onValueChange(key);
+      performSearch(key);
+      return;
+    }
+
     if (isModifierKey(key)) {
       pressedKeys.current.add(key);
       return;
