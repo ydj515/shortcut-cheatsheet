@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { categories } from "../data/categories";
+import { Footer } from "./Footer"; // Footer 가져오기
 
 type NavigationBarProps = {
   onSelectCategory: (categoryId: string) => void;
@@ -13,7 +14,6 @@ export const NavigationBar = ({
 }: NavigationBarProps) => {
   const [open, setOpen] = useState(false);
 
-  // 메뉴 항목 클릭 시 닫힘
   const handleSelect = (categoryId: string) => {
     onSelectCategory(categoryId);
     setOpen(false);
@@ -21,7 +21,7 @@ export const NavigationBar = ({
 
   return (
     <>
-      {/* 모바일: 햄버거 메뉴 */}
+      {/* ✅ 모바일: 햄버거 메뉴 */}
       <div className="md:hidden relative">
         <div className="flex items-center justify-between p-4 bg-gray-100">
           <h1 className="text-xl font-bold text-gray-800">
@@ -70,12 +70,17 @@ export const NavigationBar = ({
               </li>
             ))}
           </ul>
+          {/* ✅ Footer: 모바일 메뉴 하단 */}
+          <div className="px-4 pb-4 pt-2 border-t border-gray-200">
+            <Footer />
+          </div>
         </div>
       </div>
-      {/* 데스크탑: 항상 보임 */}
-      <nav className="hidden md:block w-64 bg-gray-100 p-4 h-screen">
-        <div className="mb-6">
-          <h1 className="text-xl font-bold text-gray-800">
+
+      {/* ✅ 데스크탑: 고정 사이드바 */}
+      <nav className="hidden md:flex flex-col w-64 bg-gray-100 p-4 h-screen justify-between">
+        <div>
+          <h1 className="text-xl font-bold text-gray-800 mb-6">
             <Link
               to="/"
               className="cursor-pointer text-inherit no-underline transition duration-300 hover:text-white hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.9)]"
@@ -83,24 +88,26 @@ export const NavigationBar = ({
               Shortcuts
             </Link>
           </h1>
+          <ul className="space-y-2">
+            {categories.map((category) => (
+              <li key={category.id}>
+                <button
+                  onClick={() => onSelectCategory(category.id)}
+                  className={`w-full text-left px-4 py-2 rounded-lg transition-colors
+                    ${
+                      selectedCategoryId === category.id
+                        ? "bg-blue-100 text-blue-700"
+                        : "text-gray-600 hover:bg-gray-100"
+                    }`}
+                >
+                  {category.name}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="space-y-2">
-          {categories.map((category) => (
-            <li key={category.id}>
-              <button
-                onClick={() => onSelectCategory(category.id)}
-                className={`w-full text-left px-4 py-2 rounded-lg transition-colors
-                  ${
-                    selectedCategoryId === category.id
-                      ? "bg-blue-100 text-blue-700"
-                      : "text-gray-600 hover:bg-gray-100"
-                  }`}
-              >
-                {category.name}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {/* ✅ Footer: 데스크탑 네비게이션 하단 */}
+        <Footer />
       </nav>
     </>
   );
