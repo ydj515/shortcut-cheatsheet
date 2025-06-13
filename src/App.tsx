@@ -21,7 +21,7 @@ function App() {
             onSelectCategory={setSelectedCategory}
           />
         </div>
-        <main className="flex-1 w-full overflow-auto">
+        <main className="flex-1 w-full max-w-7xl mx-auto overflow-auto">
           <ShortcutCheatsheet selectedCategory={selectedCategory} />
         </main>
       </div>

@@ -12,6 +12,7 @@ export default function ShortcutCheatsheet({
   const [filtered, setFiltered] = useState<Shortcut[]>(
     allShortcuts.filter((s) => s.category === selectedCategory)
   );
+  const [query, setQuery] = useState("");
 
   const categoryShortcuts = allShortcuts.filter(
     (s) => s.category === selectedCategory
@@ -19,6 +20,7 @@ export default function ShortcutCheatsheet({
 
   useEffect(() => {
     setFiltered(categoryShortcuts);
+    setQuery("");
   }, [selectedCategory]);
 
   const handleSearch = useCallback((results: Shortcut[]) => {
@@ -26,10 +28,14 @@ export default function ShortcutCheatsheet({
   }, []);
 
   return (
-    <div className="bg-gray-50 text-gray-800 font-sans p-6 w-full h-full">
-      <h1 className="text-3xl font-bold mb-6">단축키 Cheatsheet</h1>
-
-      <ShortcutSearch shortcuts={categoryShortcuts} onSearch={handleSearch} />
+    <div className=" text-gray-800 p-6 font-sans w-full h-full">
+      <h1 className="text-3xl font-bold mt-6 mb-6">Cheatsheet</h1>
+      <ShortcutSearch
+        shortcuts={categoryShortcuts}
+        onSearch={handleSearch}
+        value={query}
+        onValueChange={setQuery}
+      />
       <ShortcutList shortcuts={filtered} />
     </div>
   );

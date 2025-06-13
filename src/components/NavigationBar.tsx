@@ -21,7 +21,7 @@ export const NavigationBar = ({
 
   return (
     <>
-      {/* ✅ 모바일: 햄버거 메뉴 */}
+      {/* 모바일: 햄버거 메뉴 */}
       <div className="md:hidden relative">
         <div className="flex items-center justify-between p-4 bg-gray-100">
           <h1 className="text-xl font-bold text-gray-800">
@@ -70,14 +70,14 @@ export const NavigationBar = ({
               </li>
             ))}
           </ul>
-          {/* ✅ Footer: 모바일 메뉴 하단 */}
+          {/* Footer: 모바일 메뉴 하단 */}
           <div className="px-4 pb-4 pt-2 border-t border-gray-200">
             <Footer />
           </div>
         </div>
       </div>
 
-      {/* ✅ 데스크탑: 고정 사이드바 */}
+      {/* 데스크탑: 고정 사이드바 */}
       <nav className="hidden md:flex flex-col w-64 bg-gray-100 p-4 h-screen justify-between">
         <div>
           <h1 className="text-xl font-bold text-gray-800 mb-6">
@@ -106,7 +106,7 @@ export const NavigationBar = ({
             ))}
           </ul>
         </div>
-        {/* ✅ Footer: 데스크탑 네비게이션 하단 */}
+        {/* Footer: 데스크탑 네비게이션 하단 */}
         <Footer />
       </nav>
     </>

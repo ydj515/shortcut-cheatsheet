@@ -1,18 +1,21 @@
-import { useState, useCallback } from "react";
+import { useRef, useCallback } from "react";
 import { isModifierKey, formatKeyCombo } from "../utils/keyboardUtils";
 import type { Shortcut } from "../types/shortcut";
 
 interface ShortcutSearchProps {
   onSearch: (results: Shortcut[]) => void;
   shortcuts: Shortcut[];
+  value: string;
+  onValueChange: (v: string) => void;
 }
 
 export default function ShortcutSearch({
   onSearch,
-  shortcuts
+  shortcuts,
+  value,
+  onValueChange
 }: ShortcutSearchProps) {
-  const [query, setQuery] = useState("");
-  const pressedKeys = new Set<string>();
+  const pressedKeys = useRef<Set<string>>(new Set());
 
   const performSearch = useCallback(
     (searchQuery: string) => {
@@ -39,34 +42,35 @@ export default function ShortcutSearch({
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const key = e.key;
     if (isModifierKey(key)) {
-      pressedKeys.add(key);
+      pressedKeys.current.add(key);
       return;
     }
-    if (pressedKeys.size > 0 && key.length === 1) {
+    if (pressedKeys.current.size > 0 && key.length === 1) {
       e.preventDefault();
-      pressedKeys.add(key);
-      const combo = formatKeyCombo(pressedKeys);
-      setQuery(combo);
+      pressedKeys.current.add(key);
+      const combo = formatKeyCombo(pressedKeys.current);
+      onValueChange(combo);
       performSearch(combo);
     }
   };
 
-  const handleKeyUp = () => pressedKeys.clear();
+  const handleKeyUp = () => pressedKeys.current.clear();
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const newQuery = e.target.value;
-      setQuery(newQuery);
+      onValueChange(newQuery);
       performSearch(newQuery);
     },
-    [performSearch]
+    [performSearch, onValueChange]
   );
 
   return (
     <input
       type="text"
-      placeholder="단축키 검색 (예: 다음 커서, cursor, ⌘ + ])"
-      value={query}
+      placeholder="Search shortcuts (e.g. move cursor, ⌘ + ], keystroke, hotkey)"
+      autoFocus={true}
+      value={value}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
