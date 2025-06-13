@@ -1138,11 +1138,142 @@ const hangulShortcuts: Shortcut[] = [
   }
 ];
 
+const wordShortcuts: Shortcut[] = [
+  {
+    category: "word",
+    action: "굵게(Bold)",
+    mac: "⌘ + B",
+    win: "Ctrl + B",
+    keywords: ["굵게", "볼드", "강조", "bold text"]
+  },
+  {
+    category: "word",
+    action: "기울임(Italic)",
+    mac: "⌘ + I",
+    win: "Ctrl + I",
+    keywords: ["기울임", "이탤릭", "italic", "italic text"]
+  },
+  {
+    category: "word",
+    action: "밑줄(Underline)",
+    mac: "⌘ + U",
+    win: "Ctrl + U",
+    keywords: ["밑줄", "언더라인", "underline", "underline text"]
+  },
+  {
+    category: "word",
+    action: "폰트 크기 키우기/줄이기",
+    mac: "⌘ + ] / ⌘ + [",
+    win: "Ctrl + ] / Ctrl + [",
+    keywords: ["폰트 크기", "텍스트 크기", "increase font", "decrease font", "font size"]
+  },
+  {
+    category: "word",
+    action: "가운데 / 좌측 / 우측 정렬",
+    mac: "⌘ + E / ⌘ + L / ⌘ + R",
+    win: "Ctrl + E / Ctrl + L / Ctrl + R",
+    keywords: ["정렬", "align", "center", "left", "right", "justify"]
+  },
+  {
+    category: "word",
+    action: "양쪽 정렬(Justify)",
+    mac: "-",
+    win: "Ctrl + J",
+    keywords: ["양쪽 정렬", "justify", "align"]
+  },
+  {
+    category: "word",
+    action: "전체 선택(Select All)",
+    mac: "⌘ + A",
+    win: "Ctrl + A",
+    keywords: ["전체 선택", "select all", "find"]
+  },
+  {
+    category: "word",
+    action: "찾기 / 바꾸기",
+    mac: "⌘ + F / ⌘ + H",
+    win: "Ctrl + F / Ctrl + H",
+    keywords: ["찾기", "바꾸기", "search", "replace"]
+  },
+  {
+    category: "word",
+    action: "페이지 나누기(Page Break)",
+    mac: "⌘ + Enter",
+    win: "Ctrl + Enter",
+    keywords: ["페이지 나누기", "page break"]
+  },
+  {
+    category: "word",
+    action: "저장 / 인쇄",
+    mac: "⌘ + S / ⌘ + P",
+    win: "Ctrl + S / Ctrl + P",
+    keywords: ["저장", "인쇄", "save", "print"]
+  },
+  {
+    category: "word",
+    action: "실행 취소 / 다시 실행",
+    mac: "⌘ + Z / ⌘ + Y",
+    win: "Ctrl + Z / Ctrl + Y",
+    keywords: ["undo", "redo", "실행 취소", "다시 실행"]
+  },
+  {
+    category: "word",
+    action: "하이퍼링크 삽입",
+    mac: "⌘ + K",
+    win: "Ctrl + K",
+    keywords: ["하이퍼링크", "링크 삽입", "link", "insert", "add"]
+  },
+  {
+    category: "word",
+    action: "단어 단위 이동 & 선택",
+    mac: "option + ←/→ / shift + option + ←/→",
+    win: "Ctrl + ←/→ / Ctrl + Shift + ←/→",
+    keywords: ["단어 이동", "단어 선택", "word navigation"] 
+  },
+  {
+    category: "word",
+    action: "문단 단위 이동 & 선택",
+    mac: "option + ↑/↓ / shift + option + ↑/↓",
+    win: "Ctrl + ↑/↓ / Ctrl + Shift + ↑/↓",
+    keywords: ["문단 이동", "문단 선택", "paragraph navigation"]
+  },
+  {
+    category: "word",
+    action: "문서 맨 앞으로 / 뒤로 이동",
+    mac: "⌘ + ↑ / ⌘ + ↓",
+    win: "Ctrl + Home / Ctrl + End",
+    keywords: ["문서 시작", "문서 끝", "go to start", "go to end"] 
+  },
+  {
+    category: "word",
+    action: "페이지 위/아래로 스크롤",
+    mac: "fn + ↑/↓",
+    win: "Page Up / Page Down",
+    keywords: ["페이지 이동", "스크롤"]
+  },
+  {
+    category: "word",
+    action: "KeyTips (리본탭 접근)",
+    mac: "Control + Period",
+    win: "Alt",
+    keywords: ["KeyTips", "리본탭", "리본 접근"] 
+  },
+  {
+    category: "word",
+    action: "리본 최소화/복원",
+    mac: "-",
+    win: "Ctrl + F1",
+    keywords: ["리본", "ribbon", "토글"]
+  }
+];
+
+
 export const allShortcuts: Shortcut[] = [
   ...intellijShortcuts,
   ...vscodeShortcuts,
   ...figmaShortcuts,
   ...excelShortcuts,
   ...powerpointShortcuts,
-  ...hangulShortcuts
+  ...hangulShortcuts,
+  ...wordShortcuts
 ];

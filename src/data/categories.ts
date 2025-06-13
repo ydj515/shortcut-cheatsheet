@@ -24,5 +24,9 @@ export const categories: Category[] = [
   {
     id: "한글",
     name: "한글"
+  },
+  {
+    id: "word",
+    name: "word"
   }
 ];
