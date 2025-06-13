@@ -908,6 +908,233 @@ export const powerpointShortcuts: Shortcut[] = [
     "mac": "⌘ + ⇧ + H",
     "win": "ctrl + ⇧ + H",
     "keywords": ["hide slide", "숨기기"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "서식 복사",
+    "mac": "⌘ + ⇧ + C / ⌘ + ⇧ + V",
+    "win": "ctrl + ⇧ + C / ctrl + ⇧ + V",
+    "keywords": ["copy format", "paste format", "서식 복사", "서식 붙여넣기"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "도형 복제",
+    "mac": "⌘ + D",
+    "win": "ctrl + D",
+    "keywords": ["duplicate shape", "도형 복제", "copy shape"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "간격 유지 복사",
+    "mac": "⌘ + D 후 ⌘ + Y",
+    "win": "ctrl + D 후 ctrl + Y",
+    "keywords": ["duplicate spacing", "간격 유지", "반복 복사"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "동작 반복",
+    "mac": "⌘ + Y",
+    "win": "F4",
+    "keywords": ["repeat last action", "반복", "이전 작업 반복"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "빠른 복사 1 (일반)",
+    "mac": "⌘ + 드래그",
+    "win": "ctrl + 드래그",
+    "keywords": ["quick copy", "빠른 복사", "drag copy"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "빠른 복사 2 (수평/수직)",
+    "mac": "⌘ + ⇧ + 드래그",
+    "win": "ctrl + ⇧ + 드래그",
+    "keywords": ["quick copy aligned", "빠른 복사 수직 수평", "정렬 복사"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "수평/수직 이동",
+    "mac": "⇧ + 드래그",
+    "win": "⇧ + 드래그",
+    "keywords": ["move horizontal", "move vertical", "수평 이동", "수직 이동"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "그룹화",
+    "mac": "⌘ + G",
+    "win": "ctrl + G",
+    "keywords": ["group", "그룹", "group objects"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "그룹 해제",
+    "mac": "⌘ + ⇧ + G",
+    "win": "ctrl + ⇧ + G",
+    "keywords": ["ungroup", "그룹 해제", "ungroup objects"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "도형 비율 유지 드래그",
+    "mac": "⇧ + 드래그",
+    "win": "⇧ + 드래그",
+    "keywords": ["keep shape ratio", "도형 비율 유지", "비율 축소 확대"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "폰트 크기 조절",
+    "mac": "⌘ + [ / ⌘ + ]",
+    "win": "ctrl + [ / ctrl + ]",
+    "keywords": ["font size adjust", "폰트 크기", "글자 크기"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "글자 굵게",
+    "mac": "⌘ + B",
+    "win": "ctrl + B",
+    "keywords": ["bold text", "굵게", "볼드"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "기울기 효과",
+    "mac": "⌘ + I",
+    "win": "ctrl + I",
+    "keywords": ["italic text", "기울임", "이탤릭"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "밑줄 효과",
+    "mac": "⌘ + U",
+    "win": "ctrl + U",
+    "keywords": ["underline text", "밑줄", "강조선"]
+  },
+  {
+    "category": "powerpoint",
+    "action": "텍스트 정렬",
+    "mac": "⌘ + L / E / R",
+    "win": "ctrl + L / E / R",
+    "keywords": ["text align", "좌측 정렬", "가운데 정렬", "우측 정렬"]
+  }
+];
+
+const hangulShortcuts: Shortcut[] = [
+  {
+    "category": "한글",
+    "action": "글자 및 문단 모양 복사 및 붙여넣기",
+    "mac": "-",
+    "win": "alt + C (복사) → alt + C (붙여넣기)",
+    "keywords": ["서식 복사", "문단 복사", "글자 복사"]
+  },
+  {
+    "category": "한글",
+    "action": "문서 첫 페이지로 이동",
+    "mac": "-",
+    "win": "ctrl + page up",
+    "keywords": ["첫 페이지", "맨 위로", "문서 이동"]
+  },
+  {
+    "category": "한글",
+    "action": "글머리표 삽입",
+    "mac": "-",
+    "win": "ctrl + shift + delete",
+    "keywords": ["글머리표", "bullets", "리스트"]
+  },
+  {
+    "category": "한글",
+    "action": "텍스트 정렬 (좌/중앙/우)",
+    "mac": "-",
+    "win": "ctrl + shift + L / C / R",
+    "keywords": ["정렬", "좌측 정렬", "가운데 정렬", "우측 정렬"]
+  },
+  {
+    "category": "한글",
+    "action": "문단 모양 열기",
+    "mac": "-",
+    "win": "alt + T",
+    "keywords": ["문단 설정", "문단 모양"]
+  },
+  {
+    "category": "한글",
+    "action": "글자 모양 열기",
+    "mac": "-",
+    "win": "alt + L",
+    "keywords": ["글꼴 설정", "글자 모양"]
+  },
+  {
+    "category": "한글",
+    "action": "자간 증/감",
+    "mac": "-",
+    "win": "alt + shift + W / N",
+    "keywords": ["자간", "글자 간격", "간격 조절"]
+  },
+  {
+    "category": "한글",
+    "action": "장평 증/감",
+    "mac": "-",
+    "win": "alt + shift + K / J",
+    "keywords": ["장평", "자폭", "글자 너비"]
+  },
+  {
+    "category": "한글",
+    "action": "폰트 크기 증/감",
+    "mac": "-",
+    "win": "alt + shift + E / R",
+    "keywords": ["폰트 크기", "글자 크기", "폰트 사이즈"]
+  },
+  {
+    "category": "한글",
+    "action": "들여쓰기 설정",
+    "mac": "-",
+    "win": "ctrl + shift + F6",
+    "keywords": ["들여쓰기", "탭", "문단 들여쓰기"]
+  },
+  {
+    "category": "한글",
+    "action": "표/그림 캡션 달기",
+    "mac": "-",
+    "win": "ctrl + N + C",
+    "keywords": ["캡션", "설명 삽입", "표 설명"]
+  },
+  {
+    "category": "한글",
+    "action": "표 열/행 추가",
+    "mac": "-",
+    "win": "alt + insert",
+    "keywords": ["표 행 추가", "표 열 추가", "테이블 추가"]
+  },
+  {
+    "category": "한글",
+    "action": "표 열/행 삭제",
+    "mac": "-",
+    "win": "alt + delete",
+    "keywords": ["표 삭제", "행 삭제", "열 삭제"]
+  },
+  {
+    "category": "한글",
+    "action": "표 셀 병합",
+    "mac": "-",
+    "win": "M",
+    "keywords": ["셀 병합", "테이블 병합"]
+  },
+  {
+    "category": "한글",
+    "action": "표 셀 높이 동일하게",
+    "mac": "-",
+    "win": "H",
+    "keywords": ["셀 높이", "표 높이", "높이 정렬"]
+  },
+  {
+    "category": "한글",
+    "action": "표 셀 넓이 동일하게",
+    "mac": "-",
+    "win": "W",
+    "keywords": ["셀 넓이", "표 넓이", "너비 정렬"]
+  },
+  {
+    "category": "한글",
+    "action": "표에서 빠져나오기",
+    "mac": "-",
+    "win": "shift + esc",
+    "keywords": ["표 나가기", "테이블 종료", "셀 밖으로"]
   }
 ];
 
@@ -916,5 +1143,6 @@ export const allShortcuts: Shortcut[] = [
   ...vscodeShortcuts,
   ...figmaShortcuts,
   ...excelShortcuts,
-  ...powerpointShortcuts
+  ...powerpointShortcuts,
+  ...hangulShortcuts
 ];

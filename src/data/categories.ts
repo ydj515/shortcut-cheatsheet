@@ -20,5 +20,9 @@ export const categories: Category[] = [
   {
     id: "powerpoint",
     name: "powerpoint"
+  },
+  {
+    id: "한글",
+    name: "한글"
   }
 ];
