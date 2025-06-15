@@ -2,9 +2,9 @@
 
 온보딩 및 협업을 위해 프로그램별 단축키 검색을 지원하는 프로젝트입니다. 한글, 영어 그리고 key stroke로 검색이 가능합니다.
 
-배포된 웹은 [링크](https://shortcut-cheatsheet.vercel.app/)에서 확인해주세요.
+배포된 웹은 [링크](https://shortcut-cheatsheet.vercel.app/)에서 확인해주세요. ([관련포스팅](https://ydj515.github.io/posts/shortcut/))
 
-![alt text](../docs/demo.png)
+![alt text](./docs/demo.png)
 
 지원되는 프로그램 목록은 다음과 같습니다.
 
