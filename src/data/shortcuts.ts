@@ -13,7 +13,14 @@ export const intellijShortcuts: Shortcut[] = [
     action: "자동정렬",
     mac: "⌘ + option + l",
     win: "ctrl + alt + l",
-    keywords: ["format", "auto format", "code format", "code align", "code beautify", "pretty"]
+    keywords: [
+      "format",
+      "auto format",
+      "code format",
+      "code align",
+      "code beautify",
+      "pretty"
+    ]
   },
   {
     category: "intellij",
@@ -34,7 +41,7 @@ export const intellijShortcuts: Shortcut[] = [
     action: "전체 검색",
     mac: "Double ⇧ ⇧",
     win: "",
-    keywords: ["search everywhere", "find", "all"]
+    keywords: ["search everywhere", "find all"]
   },
   {
     category: "intellij",
@@ -139,7 +146,7 @@ export const intellijShortcuts: Shortcut[] = [
     action: "최근 닫았던 창 목록",
     mac: "⌘ + e",
     win: "ctrl + e",
-    keywords: ["recent files"]
+    keywords: ["closed recent files"]
   },
   {
     category: "intellij",
@@ -153,21 +160,21 @@ export const intellijShortcuts: Shortcut[] = [
     action: "왼쪽 프로젝트 창 보이기",
     mac: "⌘ + 1",
     win: "alt + 1",
-    keywords: ["project view"]
+    keywords: ["left project window view"]
   },
   {
     category: "intellij",
     action: "터미널 열기",
     mac: "option + fn + f12",
     win: "alt + f12",
-    keywords: ["terminal"]
+    keywords: ["open terminal"]
   },
   {
     category: "intellij",
     action: "액션 찾기",
     mac: "⌘ + ⇧ + A",
     win: "",
-    keywords: ["find action", "command"]
+    keywords: ["find action", "command", "search action"]
   },
   {
     category: "intellij",
@@ -181,7 +188,7 @@ export const intellijShortcuts: Shortcut[] = [
     action: "현재 문장 완성",
     mac: "⌘ + ⇧ + Enter",
     win: "",
-    keywords: ["complete", "statement"]
+    keywords: ["complete sentence", "complete statement"]
   },
   {
     category: "intellij",
@@ -223,7 +230,7 @@ export const intellijShortcuts: Shortcut[] = [
     action: "에디터 포커스",
     mac: "⎋ Esc",
     win: "",
-    keywords: ["focus", "editor"]
+    keywords: ["focus on editor"]
   }
 ];
 
@@ -599,542 +606,559 @@ export const vscodeShortcuts: Shortcut[] = [
 
 export const excelShortcuts: Shortcut[] = [
   {
-    "category": "excel",
-    "action": "현재 셀 편집",
-    "mac": "ctrl + U",
-    "win": "F2",
-    "keywords": ["edit cell", "cell input"]
+    category: "excel",
+    action: "현재 셀 편집",
+    mac: "ctrl + U",
+    win: "F2",
+    keywords: ["edit cell", "cell input"]
   },
   {
-    "category": "excel",
-    "action": "자동 채우기 (선택 영역 아래로 복사)",
-    "mac": "⌘ + D",
-    "win": "ctrl + D",
-    "keywords": ["fill down", "copy down"]
+    category: "excel",
+    action: "자동 채우기 (선택 영역 아래로 복사)",
+    mac: "⌘ + D",
+    win: "ctrl + D",
+    keywords: ["fill down", "copy down"]
   },
   {
-    "category": "excel",
-    "action": "오른쪽으로 복사",
-    "mac": "⌘ + R",
-    "win": "ctrl + R",
-    "keywords": ["fill right", "copy right"]
+    category: "excel",
+    action: "오른쪽으로 복사",
+    mac: "⌘ + R",
+    win: "ctrl + R",
+    keywords: ["fill right", "copy right"]
   },
   {
-    "category": "excel",
-    "action": "전체 선택",
-    "mac": "⌘ + A",
-    "win": "ctrl + A",
-    "keywords": ["select all", "highlight all"]
+    category: "excel",
+    action: "전체 선택",
+    mac: "⌘ + A",
+    win: "ctrl + A",
+    keywords: ["select all", "highlight all"]
   },
   {
-    "category": "excel",
-    "action": "새 줄 삽입",
-    "mac": "⌘ + ⇧ + K",
-    "win": "ctrl + ⇧ + +",
-    "keywords": ["insert row", "add row"]
+    category: "excel",
+    action: "새 줄 삽입",
+    mac: "⌘ + ⇧ + K",
+    win: "ctrl + ⇧ + +",
+    keywords: ["insert row", "add row"]
   },
   {
-    "category": "excel",
-    "action": "열/행 삭제",
-    "mac": "⌘ + -",
-    "win": "ctrl + -",
-    "keywords": ["delete row", "delete column", "remove row", "remove column"]
+    category: "excel",
+    action: "열/행 삭제",
+    mac: "⌘ + -",
+    win: "ctrl + -",
+    keywords: ["delete row", "delete column", "remove row", "remove column"]
   },
   {
-    "category": "excel",
-    "action": "현재 날짜 입력",
-    "mac": "ctrl + ;",
-    "win": "ctrl + ;",
-    "keywords": ["insert date", "today", "current date"]
+    category: "excel",
+    action: "현재 날짜 입력",
+    mac: "ctrl + ;",
+    win: "ctrl + ;",
+    keywords: ["insert date", "today", "current date"]
   },
   {
-    "category": "excel",
-    "action": "현재 시간 입력",
-    "mac": "ctrl + ⇧ + ;",
-    "win": "ctrl + ⇧ + ;",
-    "keywords": ["insert time", "now", "current time"]
+    category: "excel",
+    action: "현재 시간 입력",
+    mac: "ctrl + ⇧ + ;",
+    win: "ctrl + ⇧ + ;",
+    keywords: ["insert time", "now", "current time"]
   },
   {
-    "category": "excel",
-    "action": "저장",
-    "mac": "⌘ + S",
-    "win": "ctrl + S",
-    "keywords": ["save", "save file", "save as"]
+    category: "excel",
+    action: "저장",
+    mac: "⌘ + S",
+    win: "ctrl + S",
+    keywords: ["save", "save file", "save as"]
   },
   {
-    "category": "excel",
-    "action": "실행 취소",
-    "mac": "⌘ + Z",
-    "win": "ctrl + Z",
-    "keywords": ["undo", "cancel"]
+    category: "excel",
+    action: "실행 취소",
+    mac: "⌘ + Z",
+    win: "ctrl + Z",
+    keywords: ["undo", "cancel"]
   },
   {
-    "category": "excel",
-    "action": "다시 실행",
-    "mac": "⌘ + Y",
-    "win": "ctrl + Y",
-    "keywords": ["redo", "repeat", "redo"]
+    category: "excel",
+    action: "다시 실행",
+    mac: "⌘ + Y",
+    win: "ctrl + Y",
+    keywords: ["redo", "repeat", "redo"]
   },
   {
-    "category": "excel",
-    "action": "찾기",
-    "mac": "⌘ + F",
-    "win": "ctrl + F",
-    "keywords": ["find", "search"]
+    category: "excel",
+    action: "찾기",
+    mac: "⌘ + F",
+    win: "ctrl + F",
+    keywords: ["find", "search"]
   },
   {
-    "category": "excel",
-    "action": "바꾸기",
-    "mac": "⌘ + H",
-    "win": "ctrl + H",
-    "keywords": ["replace", "find and replace"]
+    category: "excel",
+    action: "바꾸기",
+    mac: "⌘ + H",
+    win: "ctrl + H",
+    keywords: ["replace", "find and replace"]
   },
   {
-    "category": "excel",
-    "action": "새 시트 삽입",
-    "mac": "⇧ + F11",
-    "win": "⇧ + F11",
-    "keywords": ["new sheet", "insert sheet"]
+    category: "excel",
+    action: "새 시트 삽입",
+    mac: "⇧ + F11",
+    win: "⇧ + F11",
+    keywords: ["new sheet", "insert sheet"]
   },
   {
-    "category": "excel",
-    "action": "시트 사이 이동 (다음)",
-    "mac": "fn + ctrl + ↓",
-    "win": "ctrl + PageDown",
-    "keywords": ["next sheet", "move sheet"]
+    category: "excel",
+    action: "시트 사이 이동 (다음)",
+    mac: "fn + ctrl + ↓",
+    win: "ctrl + PageDown",
+    keywords: ["next sheet", "move sheet"]
   },
   {
-    "category": "excel",
-    "action": "시트 사이 이동 (이전)",
-    "mac": "fn + ctrl + ↑",
-    "win": "ctrl + PageUp",
-    "keywords": ["previous sheet", "move sheet"]
+    category: "excel",
+    action: "시트 사이 이동 (이전)",
+    mac: "fn + ctrl + ↑",
+    win: "ctrl + PageUp",
+    keywords: ["previous sheet", "move sheet"]
   },
   {
-    "category": "excel",
-    "action": "선택 영역 테두리 설정",
-    "mac": "⌘ + option + 0",
-    "win": "ctrl + ⇧ + &",
-    "keywords": ["border", "set border"]
+    category: "excel",
+    action: "선택 영역 테두리 설정",
+    mac: "⌘ + option + 0",
+    win: "ctrl + ⇧ + &",
+    keywords: ["border", "set border"]
   },
   {
-    "category": "excel",
-    "action": "서식 복사",
-    "mac": "⌘ + ⇧ + C, ⌘ + ⇧ + V",
-    "win": "ctrl + ⇧ + C, ctrl + ⇧ + V",
-    "keywords": ["copy format", "paste format", "format painter", "copy style", "paste style"]
+    category: "excel",
+    action: "서식 복사",
+    mac: "⌘ + ⇧ + C, ⌘ + ⇧ + V",
+    win: "ctrl + ⇧ + C, ctrl + ⇧ + V",
+    keywords: [
+      "copy format",
+      "paste format",
+      "format painter",
+      "copy style",
+      "paste style"
+    ]
   },
   {
-    "category": "excel",
-    "action": "셀 병합",
-    "mac": "⌘ + option + M",
-    "win": "alt + H + M + M",
-    "keywords": ["merge cells"]
+    category: "excel",
+    action: "셀 병합",
+    mac: "⌘ + option + M",
+    win: "alt + H + M + M",
+    keywords: ["merge cells"]
   },
   {
-    "category": "excel",
-    "action": "오름차순 정렬",
-    "mac": "ctrl + option + R",
-    "win": "alt + A + S + A",
-    "keywords": ["sort ascending", "sort A to Z", "오름차순"]
+    category: "excel",
+    action: "오름차순 정렬",
+    mac: "ctrl + option + R",
+    win: "alt + A + S + A",
+    keywords: ["sort ascending", "sort A to Z", "오름차순"]
   },
   {
-    "category": "excel",
-    "action": "내림차순 정렬",
-    "mac": "ctrl + option + R",
-    "win": "alt + A + S + D",
-    "keywords": ["sort descending", "sort Z to A", "내림차순"]
+    category: "excel",
+    action: "내림차순 정렬",
+    mac: "ctrl + option + R",
+    win: "alt + A + S + D",
+    keywords: ["sort descending", "sort Z to A", "내림차순"]
   },
   {
-    "category": "excel",
-    "action": "정렬 대화상자 열기",
-    "mac": "fn + ctrl + option + R",
-    "win": "alt + D + S",
-    "keywords": ["custom sort", "sort dialog", "정렬 설정", "sort settings"]
-  },
-    {
-    "category": "excel",
-    "action": "함수 마법사 열기",
-    "mac": "⇧ + F3",
-    "win": "⇧ + F3",
-    "keywords": ["insert function", "함수 삽입"]
+    category: "excel",
+    action: "정렬 대화상자 열기",
+    mac: "fn + ctrl + option + R",
+    win: "alt + D + S",
+    keywords: ["custom sort", "sort dialog", "정렬 설정", "sort settings"]
   },
   {
-    "category": "excel",
-    "action": "합계 함수 자동 입력",
-    "mac": "⌘ + ⇧ + T",
-    "win": "alt + =",
-    "keywords": ["autosum", "sum", "자동 합계"]
+    category: "excel",
+    action: "함수 마법사 열기",
+    mac: "⇧ + F3",
+    win: "⇧ + F3",
+    keywords: ["insert function", "함수 삽입"]
   },
   {
-    "category": "excel",
-    "action": "수식 계산",
-    "mac": "fn + return",
-    "win": "F9",
-    "keywords": ["calculate formula", "evaluate formula", "계산"]
+    category: "excel",
+    action: "합계 함수 자동 입력",
+    mac: "⌘ + ⇧ + T",
+    win: "alt + =",
+    keywords: ["autosum", "sum", "자동 합계"]
   },
   {
-    "category": "excel",
-    "action": "다음 인수로 이동 (함수 작성 중)",
-    "mac": "ctrl + ,",
-    "win": "ctrl + ,",
-    "keywords": ["function argument", "다음 인수", "next argument"]
+    category: "excel",
+    action: "수식 계산",
+    mac: "fn + return",
+    win: "F9",
+    keywords: ["calculate formula", "evaluate formula", "계산"]
   },
   {
-    "category": "excel",
-    "action": "셀 수식 표시/숨기기 토글",
-    "mac": "ctrl + `",
-    "win": "ctrl + `",
-    "keywords": ["toggle formula", "수식 보기", "show formula"]
+    category: "excel",
+    action: "다음 인수로 이동 (함수 작성 중)",
+    mac: "ctrl + ,",
+    win: "ctrl + ,",
+    keywords: ["function argument", "다음 인수", "next argument"]
+  },
+  {
+    category: "excel",
+    action: "셀 수식 표시/숨기기 토글",
+    mac: "ctrl + `",
+    win: "ctrl + `",
+    keywords: ["toggle formula", "수식 보기", "show formula"]
   }
 ];
 
 export const powerpointShortcuts: Shortcut[] = [
   {
-    "category": "powerpoint",
-    "action": "슬라이드 쇼 시작 (처음부터)",
-    "mac": "⌘ + ⇧ + return",
-    "win": "F5",
-    "keywords": ["start slideshow", "presentation", "슬라이드 쇼", "start slide show"]
+    category: "powerpoint",
+    action: "슬라이드 쇼 시작 (처음부터)",
+    mac: "⌘ + ⇧ + return",
+    win: "F5",
+    keywords: [
+      "start slideshow",
+      "presentation",
+      "슬라이드 쇼",
+      "start slide show"
+    ]
   },
   {
-    "category": "powerpoint",
-    "action": "슬라이드 쇼 시작 (현재 슬라이드부터)",
-    "mac": "fn + return",
-    "win": "⇧ + F5",
-    "keywords": ["slideshow current", "현재 슬라이드 쇼", "current slide"]
+    category: "powerpoint",
+    action: "슬라이드 쇼 시작 (현재 슬라이드부터)",
+    mac: "fn + return",
+    win: "⇧ + F5",
+    keywords: ["slideshow current", "현재 슬라이드 쇼", "current slide"]
   },
   {
-    "category": "powerpoint",
-    "action": "새 슬라이드 삽입",
-    "mac": "⌘ + ⇧ + N",
-    "win": "ctrl + M",
-    "keywords": ["new slide", "insert slide", "슬라이드 추가", "add slide"]
+    category: "powerpoint",
+    action: "새 슬라이드 삽입",
+    mac: "⌘ + ⇧ + N",
+    win: "ctrl + M",
+    keywords: ["new slide", "insert slide", "슬라이드 추가", "add slide"]
   },
   {
-    "category": "powerpoint",
-    "action": "복사",
-    "mac": "⌘ + C",
-    "win": "ctrl + C",
-    "keywords": ["copy", "복사", "duplicate"]
+    category: "powerpoint",
+    action: "복사",
+    mac: "⌘ + C",
+    win: "ctrl + C",
+    keywords: ["copy", "복사", "duplicate"]
   },
   {
-    "category": "powerpoint",
-    "action": "붙여넣기",
-    "mac": "⌘ + V",
-    "win": "ctrl + V",
-    "keywords": ["paste", "붙여넣기", "insert"]
+    category: "powerpoint",
+    action: "붙여넣기",
+    mac: "⌘ + V",
+    win: "ctrl + V",
+    keywords: ["paste", "붙여넣기", "insert"]
   },
   {
-    "category": "powerpoint",
-    "action": "잘라내기",
-    "mac": "⌘ + X",
-    "win": "ctrl + X",
-    "keywords": ["cut", "잘라내기", "remove"]
+    category: "powerpoint",
+    action: "잘라내기",
+    mac: "⌘ + X",
+    win: "ctrl + X",
+    keywords: ["cut", "잘라내기", "remove"]
   },
   {
-    "category": "powerpoint",
-    "action": "실행 취소",
-    "mac": "⌘ + Z",
-    "win": "ctrl + Z",
-    "keywords": ["undo", "되돌리기", "cancel"]
+    category: "powerpoint",
+    action: "실행 취소",
+    mac: "⌘ + Z",
+    win: "ctrl + Z",
+    keywords: ["undo", "되돌리기", "cancel"]
   },
   {
-    "category": "powerpoint",
-    "action": "다시 실행",
-    "mac": "⌘ + Y",
-    "win": "ctrl + Y",
-    "keywords": ["redo", "다시 실행"]
+    category: "powerpoint",
+    action: "다시 실행",
+    mac: "⌘ + Y",
+    win: "ctrl + Y",
+    keywords: ["redo", "다시 실행"]
   },
   {
-    "category": "powerpoint",
-    "action": "슬라이드 복제",
-    "mac": "⌘ + D",
-    "win": "ctrl + D",
-    "keywords": ["duplicate slide", "슬라이드 복제", "copy slide"]
+    category: "powerpoint",
+    action: "슬라이드 복제",
+    mac: "⌘ + D",
+    win: "ctrl + D",
+    keywords: ["duplicate slide", "슬라이드 복제", "copy slide"]
   },
   {
-    "category": "powerpoint",
-    "action": "슬라이드 삭제",
-    "mac": "fn + delete",
-    "win": "delete",
-    "keywords": ["delete slide", "슬라이드 삭제", "remove slide"]
+    category: "powerpoint",
+    action: "슬라이드 삭제",
+    mac: "fn + delete",
+    win: "delete",
+    keywords: ["delete slide", "슬라이드 삭제", "remove slide"]
   },
   {
-    "category": "powerpoint",
-    "action": "개체 정렬 - 가운데 정렬",
-    "mac": "option + ⌘ + E",
-    "win": "alt + H + G + A + C",
-    "keywords": ["align center", "가운데 정렬", "center"]
+    category: "powerpoint",
+    action: "개체 정렬 - 가운데 정렬",
+    mac: "option + ⌘ + E",
+    win: "alt + H + G + A + C",
+    keywords: ["align center", "가운데 정렬", "center"]
   },
   {
-    "category": "powerpoint",
-    "action": "개체 정렬 - 중간 정렬",
-    "mac": "option + ⌘ + M",
-    "win": "alt + H + G + A + M",
-    "keywords": ["align middle", "중간 정렬", "center"]
+    category: "powerpoint",
+    action: "개체 정렬 - 중간 정렬",
+    mac: "option + ⌘ + M",
+    win: "alt + H + G + A + M",
+    keywords: ["align middle", "중간 정렬", "center"]
   },
   {
-    "category": "powerpoint",
-    "action": "텍스트 상자 삽입",
-    "mac": "⌘ + ⇧ + X",
-    "win": "alt + N + X",
-    "keywords": ["insert text box", "텍스트 상자"]
+    category: "powerpoint",
+    action: "텍스트 상자 삽입",
+    mac: "⌘ + ⇧ + X",
+    win: "alt + N + X",
+    keywords: ["insert text box", "텍스트 상자"]
   },
   {
-    "category": "powerpoint",
-    "action": "도형 삽입",
-    "mac": "⌘ + ⇧ + H",
-    "win": "alt + N + S + H",
-    "keywords": ["insert shape", "도형 삽입"]
+    category: "powerpoint",
+    action: "도형 삽입",
+    mac: "⌘ + ⇧ + H",
+    win: "alt + N + S + H",
+    keywords: ["insert shape", "도형 삽입"]
   },
   {
-    "category": "powerpoint",
-    "action": "슬라이드 간 이동 (이전/다음)",
-    "mac": "fn + ↑ / fn + ↓",
-    "win": "page up / page down",
-    "keywords": ["slide navigation", "다음 슬라이드", "이전 슬라이드", "next slide", "previous slide"]
+    category: "powerpoint",
+    action: "슬라이드 간 이동 (이전/다음)",
+    mac: "fn + ↑ / fn + ↓",
+    win: "page up / page down",
+    keywords: [
+      "slide navigation",
+      "다음 슬라이드",
+      "이전 슬라이드",
+      "next slide",
+      "previous slide"
+    ]
   },
   {
-    "category": "powerpoint",
-    "action": "전체 선택",
-    "mac": "⌘ + A",
-    "win": "ctrl + A",
-    "keywords": ["select all", "전체 선택"]
+    category: "powerpoint",
+    action: "전체 선택",
+    mac: "⌘ + A",
+    win: "ctrl + A",
+    keywords: ["select all", "전체 선택"]
   },
   {
-    "category": "powerpoint",
-    "action": "슬라이드 숨기기",
-    "mac": "⌘ + ⇧ + H",
-    "win": "ctrl + ⇧ + H",
-    "keywords": ["hide slide", "숨기기"]
+    category: "powerpoint",
+    action: "슬라이드 숨기기",
+    mac: "⌘ + ⇧ + H",
+    win: "ctrl + ⇧ + H",
+    keywords: ["hide slide", "숨기기"]
   },
   {
-    "category": "powerpoint",
-    "action": "서식 복사",
-    "mac": "⌘ + ⇧ + C / ⌘ + ⇧ + V",
-    "win": "ctrl + ⇧ + C / ctrl + ⇧ + V",
-    "keywords": ["copy format", "paste format", "서식 복사", "서식 붙여넣기"]
+    category: "powerpoint",
+    action: "서식 복사",
+    mac: "⌘ + ⇧ + C / ⌘ + ⇧ + V",
+    win: "ctrl + ⇧ + C / ctrl + ⇧ + V",
+    keywords: ["copy format", "paste format", "서식 복사", "서식 붙여넣기"]
   },
   {
-    "category": "powerpoint",
-    "action": "도형 복제",
-    "mac": "⌘ + D",
-    "win": "ctrl + D",
-    "keywords": ["duplicate shape", "도형 복제", "copy shape"]
+    category: "powerpoint",
+    action: "도형 복제",
+    mac: "⌘ + D",
+    win: "ctrl + D",
+    keywords: ["duplicate shape", "도형 복제", "copy shape"]
   },
   {
-    "category": "powerpoint",
-    "action": "간격 유지 복사",
-    "mac": "⌘ + D 후 ⌘ + Y",
-    "win": "ctrl + D 후 ctrl + Y",
-    "keywords": ["duplicate spacing", "간격 유지", "반복 복사"]
+    category: "powerpoint",
+    action: "간격 유지 복사",
+    mac: "⌘ + D 후 ⌘ + Y",
+    win: "ctrl + D 후 ctrl + Y",
+    keywords: ["duplicate spacing", "간격 유지", "반복 복사"]
   },
   {
-    "category": "powerpoint",
-    "action": "동작 반복",
-    "mac": "⌘ + Y",
-    "win": "F4",
-    "keywords": ["repeat last action", "반복", "이전 작업 반복"]
+    category: "powerpoint",
+    action: "동작 반복",
+    mac: "⌘ + Y",
+    win: "F4",
+    keywords: ["repeat last action", "반복", "이전 작업 반복"]
   },
   {
-    "category": "powerpoint",
-    "action": "빠른 복사 1 (일반)",
-    "mac": "⌘ + 드래그",
-    "win": "ctrl + 드래그",
-    "keywords": ["quick copy", "빠른 복사", "drag copy"]
+    category: "powerpoint",
+    action: "빠른 복사 1 (일반)",
+    mac: "⌘ + 드래그",
+    win: "ctrl + 드래그",
+    keywords: ["quick copy", "빠른 복사", "drag copy"]
   },
   {
-    "category": "powerpoint",
-    "action": "빠른 복사 2 (수평/수직)",
-    "mac": "⌘ + ⇧ + 드래그",
-    "win": "ctrl + ⇧ + 드래그",
-    "keywords": ["quick copy aligned", "빠른 복사 수직 수평", "정렬 복사"]
+    category: "powerpoint",
+    action: "빠른 복사 2 (수평/수직)",
+    mac: "⌘ + ⇧ + 드래그",
+    win: "ctrl + ⇧ + 드래그",
+    keywords: ["quick copy aligned", "빠른 복사 수직 수평", "정렬 복사"]
   },
   {
-    "category": "powerpoint",
-    "action": "수평/수직 이동",
-    "mac": "⇧ + 드래그",
-    "win": "⇧ + 드래그",
-    "keywords": ["move horizontal", "move vertical", "수평 이동", "수직 이동"]
+    category: "powerpoint",
+    action: "수평/수직 이동",
+    mac: "⇧ + 드래그",
+    win: "⇧ + 드래그",
+    keywords: ["move horizontal", "move vertical", "수평 이동", "수직 이동"]
   },
   {
-    "category": "powerpoint",
-    "action": "그룹화",
-    "mac": "⌘ + G",
-    "win": "ctrl + G",
-    "keywords": ["group", "그룹", "group objects"]
+    category: "powerpoint",
+    action: "그룹화",
+    mac: "⌘ + G",
+    win: "ctrl + G",
+    keywords: ["group", "그룹", "group objects"]
   },
   {
-    "category": "powerpoint",
-    "action": "그룹 해제",
-    "mac": "⌘ + ⇧ + G",
-    "win": "ctrl + ⇧ + G",
-    "keywords": ["ungroup", "그룹 해제", "ungroup objects"]
+    category: "powerpoint",
+    action: "그룹 해제",
+    mac: "⌘ + ⇧ + G",
+    win: "ctrl + ⇧ + G",
+    keywords: ["ungroup", "그룹 해제", "ungroup objects"]
   },
   {
-    "category": "powerpoint",
-    "action": "도형 비율 유지 드래그",
-    "mac": "⇧ + 드래그",
-    "win": "⇧ + 드래그",
-    "keywords": ["keep shape ratio", "도형 비율 유지", "비율 축소 확대"]
+    category: "powerpoint",
+    action: "도형 비율 유지 드래그",
+    mac: "⇧ + 드래그",
+    win: "⇧ + 드래그",
+    keywords: ["keep shape ratio", "도형 비율 유지", "비율 축소 확대"]
   },
   {
-    "category": "powerpoint",
-    "action": "폰트 크기 조절",
-    "mac": "⌘ + [ / ⌘ + ]",
-    "win": "ctrl + [ / ctrl + ]",
-    "keywords": ["font size adjust", "폰트 크기", "글자 크기"]
+    category: "powerpoint",
+    action: "폰트 크기 조절",
+    mac: "⌘ + [ / ⌘ + ]",
+    win: "ctrl + [ / ctrl + ]",
+    keywords: ["font size adjust", "폰트 크기", "글자 크기"]
   },
   {
-    "category": "powerpoint",
-    "action": "글자 굵게",
-    "mac": "⌘ + B",
-    "win": "ctrl + B",
-    "keywords": ["bold text", "굵게", "볼드"]
+    category: "powerpoint",
+    action: "글자 굵게",
+    mac: "⌘ + B",
+    win: "ctrl + B",
+    keywords: ["bold text", "굵게", "볼드"]
   },
   {
-    "category": "powerpoint",
-    "action": "기울기 효과",
-    "mac": "⌘ + I",
-    "win": "ctrl + I",
-    "keywords": ["italic text", "기울임", "이탤릭"]
+    category: "powerpoint",
+    action: "기울기 효과",
+    mac: "⌘ + I",
+    win: "ctrl + I",
+    keywords: ["italic text", "기울임", "이탤릭"]
   },
   {
-    "category": "powerpoint",
-    "action": "밑줄 효과",
-    "mac": "⌘ + U",
-    "win": "ctrl + U",
-    "keywords": ["underline text", "밑줄", "강조선"]
+    category: "powerpoint",
+    action: "밑줄 효과",
+    mac: "⌘ + U",
+    win: "ctrl + U",
+    keywords: ["underline text", "밑줄", "강조선"]
   },
   {
-    "category": "powerpoint",
-    "action": "텍스트 정렬",
-    "mac": "⌘ + L / E / R",
-    "win": "ctrl + L / E / R",
-    "keywords": ["text align", "좌측 정렬", "가운데 정렬", "우측 정렬"]
+    category: "powerpoint",
+    action: "텍스트 정렬",
+    mac: "⌘ + L / E / R",
+    win: "ctrl + L / E / R",
+    keywords: ["text align", "좌측 정렬", "가운데 정렬", "우측 정렬"]
   }
 ];
 
 const hangulShortcuts: Shortcut[] = [
   {
-    "category": "한글",
-    "action": "글자 및 문단 모양 복사 및 붙여넣기",
-    "mac": "-",
-    "win": "alt + C (복사) → alt + C (붙여넣기)",
-    "keywords": ["서식 복사", "문단 복사", "글자 복사"]
+    category: "한글",
+    action: "글자 및 문단 모양 복사 및 붙여넣기",
+    mac: "-",
+    win: "alt + C (복사) → alt + C (붙여넣기)",
+    keywords: ["서식 복사", "문단 복사", "글자 복사"]
   },
   {
-    "category": "한글",
-    "action": "문서 첫 페이지로 이동",
-    "mac": "-",
-    "win": "ctrl + page up",
-    "keywords": ["첫 페이지", "맨 위로", "문서 이동"]
+    category: "한글",
+    action: "문서 첫 페이지로 이동",
+    mac: "-",
+    win: "ctrl + page up",
+    keywords: ["첫 페이지", "맨 위로", "문서 이동"]
   },
   {
-    "category": "한글",
-    "action": "글머리표 삽입",
-    "mac": "-",
-    "win": "ctrl + ⇧ + delete",
-    "keywords": ["글머리표", "bullets", "리스트"]
+    category: "한글",
+    action: "글머리표 삽입",
+    mac: "-",
+    win: "ctrl + ⇧ + delete",
+    keywords: ["글머리표", "bullets", "리스트"]
   },
   {
-    "category": "한글",
-    "action": "텍스트 정렬 (좌/중앙/우)",
-    "mac": "-",
-    "win": "ctrl + ⇧ + L / C / R",
-    "keywords": ["정렬", "좌측 정렬", "가운데 정렬", "우측 정렬"]
+    category: "한글",
+    action: "텍스트 정렬 (좌/중앙/우)",
+    mac: "-",
+    win: "ctrl + ⇧ + L / C / R",
+    keywords: ["정렬", "좌측 정렬", "가운데 정렬", "우측 정렬"]
   },
   {
-    "category": "한글",
-    "action": "문단 모양 열기",
-    "mac": "-",
-    "win": "alt + T",
-    "keywords": ["문단 설정", "문단 모양"]
+    category: "한글",
+    action: "문단 모양 열기",
+    mac: "-",
+    win: "alt + T",
+    keywords: ["문단 설정", "문단 모양"]
   },
   {
-    "category": "한글",
-    "action": "글자 모양 열기",
-    "mac": "-",
-    "win": "alt + L",
-    "keywords": ["글꼴 설정", "글자 모양"]
+    category: "한글",
+    action: "글자 모양 열기",
+    mac: "-",
+    win: "alt + L",
+    keywords: ["글꼴 설정", "글자 모양"]
   },
   {
-    "category": "한글",
-    "action": "자간 증/감",
-    "mac": "-",
-    "win": "alt + ⇧ + W / N",
-    "keywords": ["자간", "글자 간격", "간격 조절"]
+    category: "한글",
+    action: "자간 증/감",
+    mac: "-",
+    win: "alt + ⇧ + W / N",
+    keywords: ["자간", "글자 간격", "간격 조절"]
   },
   {
-    "category": "한글",
-    "action": "장평 증/감",
-    "mac": "-",
-    "win": "alt + ⇧ + K / J",
-    "keywords": ["장평", "자폭", "글자 너비"]
+    category: "한글",
+    action: "장평 증/감",
+    mac: "-",
+    win: "alt + ⇧ + K / J",
+    keywords: ["장평", "자폭", "글자 너비"]
   },
   {
-    "category": "한글",
-    "action": "폰트 크기 증/감",
-    "mac": "-",
-    "win": "alt + ⇧ + E / R",
-    "keywords": ["폰트 크기", "글자 크기", "폰트 사이즈"]
+    category: "한글",
+    action: "폰트 크기 증/감",
+    mac: "-",
+    win: "alt + ⇧ + E / R",
+    keywords: ["폰트 크기", "글자 크기", "폰트 사이즈"]
   },
   {
-    "category": "한글",
-    "action": "들여쓰기 설정",
-    "mac": "-",
-    "win": "ctrl + ⇧ + F6",
-    "keywords": ["들여쓰기", "탭", "문단 들여쓰기"]
+    category: "한글",
+    action: "들여쓰기 설정",
+    mac: "-",
+    win: "ctrl + ⇧ + F6",
+    keywords: ["들여쓰기", "탭", "문단 들여쓰기"]
   },
   {
-    "category": "한글",
-    "action": "표/그림 캡션 달기",
-    "mac": "-",
-    "win": "ctrl + N + C",
-    "keywords": ["캡션", "설명 삽입", "표 설명"]
+    category: "한글",
+    action: "표/그림 캡션 달기",
+    mac: "-",
+    win: "ctrl + N + C",
+    keywords: ["캡션", "설명 삽입", "표 설명"]
   },
   {
-    "category": "한글",
-    "action": "표 열/행 추가",
-    "mac": "-",
-    "win": "alt + insert",
-    "keywords": ["표 행 추가", "표 열 추가", "테이블 추가"]
+    category: "한글",
+    action: "표 열/행 추가",
+    mac: "-",
+    win: "alt + insert",
+    keywords: ["표 행 추가", "표 열 추가", "테이블 추가"]
   },
   {
-    "category": "한글",
-    "action": "표 열/행 삭제",
-    "mac": "-",
-    "win": "alt + delete",
-    "keywords": ["표 삭제", "행 삭제", "열 삭제"]
+    category: "한글",
+    action: "표 열/행 삭제",
+    mac: "-",
+    win: "alt + delete",
+    keywords: ["표 삭제", "행 삭제", "열 삭제"]
   },
   {
-    "category": "한글",
-    "action": "표 셀 병합",
-    "mac": "-",
-    "win": "M",
-    "keywords": ["셀 병합", "테이블 병합"]
+    category: "한글",
+    action: "표 셀 병합",
+    mac: "-",
+    win: "M",
+    keywords: ["셀 병합", "테이블 병합"]
   },
   {
-    "category": "한글",
-    "action": "표 셀 높이 동일하게",
-    "mac": "-",
-    "win": "H",
-    "keywords": ["셀 높이", "표 높이", "높이 정렬"]
+    category: "한글",
+    action: "표 셀 높이 동일하게",
+    mac: "-",
+    win: "H",
+    keywords: ["셀 높이", "표 높이", "높이 정렬"]
   },
   {
-    "category": "한글",
-    "action": "표 셀 넓이 동일하게",
-    "mac": "-",
-    "win": "W",
-    "keywords": ["셀 넓이", "표 넓이", "너비 정렬"]
+    category: "한글",
+    action: "표 셀 넓이 동일하게",
+    mac: "-",
+    win: "W",
+    keywords: ["셀 넓이", "표 넓이", "너비 정렬"]
   },
   {
-    "category": "한글",
-    "action": "표에서 빠져나오기",
-    "mac": "-",
-    "win": "⇧ + esc",
-    "keywords": ["표 나가기", "테이블 종료", "셀 밖으로"]
+    category: "한글",
+    action: "표에서 빠져나오기",
+    mac: "-",
+    win: "⇧ + esc",
+    keywords: ["표 나가기", "테이블 종료", "셀 밖으로"]
   }
 ];
 
@@ -1165,7 +1189,13 @@ const wordShortcuts: Shortcut[] = [
     action: "폰트 크기 키우기/줄이기",
     mac: "⌘ + ] / ⌘ + [",
     win: "Ctrl + ] / Ctrl + [",
-    keywords: ["폰트 크기", "텍스트 크기", "increase font", "decrease font", "font size"]
+    keywords: [
+      "폰트 크기",
+      "텍스트 크기",
+      "increase font",
+      "decrease font",
+      "font size"
+    ]
   },
   {
     category: "word",
@@ -1228,7 +1258,7 @@ const wordShortcuts: Shortcut[] = [
     action: "단어 단위 이동 & 선택",
     mac: "option + ←/→ / shift + option + ←/→",
     win: "Ctrl + ←/→ / Ctrl + Shift + ←/→",
-    keywords: ["단어 이동", "단어 선택", "word navigation"] 
+    keywords: ["단어 이동", "단어 선택", "word navigation"]
   },
   {
     category: "word",
@@ -1242,7 +1272,7 @@ const wordShortcuts: Shortcut[] = [
     action: "문서 맨 앞으로 / 뒤로 이동",
     mac: "⌘ + ↑ / ⌘ + ↓",
     win: "Ctrl + Home / Ctrl + End",
-    keywords: ["문서 시작", "문서 끝", "go to start", "go to end"] 
+    keywords: ["문서 시작", "문서 끝", "go to start", "go to end"]
   },
   {
     category: "word",
@@ -1256,7 +1286,7 @@ const wordShortcuts: Shortcut[] = [
     action: "KeyTips (리본탭 접근)",
     mac: "Control + Period",
     win: "Alt",
-    keywords: ["KeyTips", "리본탭", "리본 접근"] 
+    keywords: ["KeyTips", "리본탭", "리본 접근"]
   },
   {
     category: "word",
@@ -1266,7 +1296,6 @@ const wordShortcuts: Shortcut[] = [
     keywords: ["리본", "ribbon", "토글"]
   }
 ];
-
 
 export const allShortcuts: Shortcut[] = [
   ...intellijShortcuts,
