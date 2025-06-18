@@ -321,6 +321,13 @@ export const figmaShortcuts: Shortcut[] = [
   },
   {
     category: "figma",
+    action: "오토레이아웃 제거",
+    mac: "option + ⇧ + A",
+    win: "alt + ⇧ + A",
+    keywords: ["auto layout", "remove auto layout", "delete auto layout", "detach auto layout"]
+  },
+  {
+    category: "figma",
     action: "간격 조절",
     mac: "option + ↑/↓",
     win: "Alt + ↑/↓",
