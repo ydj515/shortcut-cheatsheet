@@ -1,4 +1,4 @@
-import { useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { isModifierKey, formatKeyCombo } from "../utils/keyboardUtils";
 import type { Shortcut } from "../types/shortcut";
 
@@ -16,13 +16,44 @@ export default function ShortcutSearch({
   onValueChange
 }: ShortcutSearchProps) {
   const pressedKeys = useRef<Set<string>>(new Set());
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const allKeywords = useRef<string[]>([]);
+
+  useEffect(() => {
+    const keywords = new Set<string>();
+    shortcuts.forEach(s => {
+      s.keywords?.forEach(k => keywords.add(k));
+    });
+    allKeywords.current = Array.from(keywords);
+  }, [shortcuts]);
+
+  useEffect(() => {
+    if (value === '') {
+      setSuggestions([]);
+    }
+  }, [value]);
+
+  const getSuggestions = (query: string) => {
+    if (!query) {
+      setSuggestions([]);
+      return;
+    }
+    const lowerQuery = query.toLowerCase();
+    const filteredKeywords = allKeywords.current.filter(k =>
+      k.toLowerCase().includes(lowerQuery)
+    );
+    setSuggestions(filteredKeywords.slice(0, 10)); // Limit suggestions
+  };
 
   const performSearch = useCallback(
     (searchQuery: string) => {
       if (!searchQuery) {
         onSearch(shortcuts);
+        setSuggestions([]);
         return;
       }
+
+      getSuggestions(searchQuery);
 
       const lower = searchQuery.toLowerCase();
       const filtered = shortcuts.filter(
@@ -46,7 +77,6 @@ export default function ShortcutSearch({
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const key = e.key;
     
-    // Handle function keys (F1-F12)
     if (key.startsWith('F') && /^F[1-9]|F1[0-2]$/.test(key)) {
       e.preventDefault();
       onValueChange(key);
@@ -78,16 +108,37 @@ export default function ShortcutSearch({
     [performSearch, onValueChange]
   );
 
+  const handleSuggestionClick = (suggestion: string) => {
+    onValueChange(suggestion);
+    performSearch(suggestion);
+    setSuggestions([]);
+  };
+
   return (
-    <input
-      type="text"
-      placeholder="Search shortcuts (e.g. move cursor, ⌘ + ], keystroke, hotkey)"
-      autoFocus={true}
-      value={value}
-      onChange={handleChange}
-      onKeyDown={handleKeyDown}
-      onKeyUp={handleKeyUp}
-      className="w-full mb-6 p-3 border border-gray-300 rounded"
-    />
+    <div className="relative">
+      <input
+        type="text"
+        placeholder="Search shortcuts (e.g. move cursor, ⌘ + ], keystroke, hotkey)"
+        autoFocus={true}
+        value={value}
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
+        className="w-full mb-1 p-3 border border-gray-300 rounded"
+      />
+      {suggestions.length > 0 && (
+        <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-y-auto shadow-lg">
+          {suggestions.map((suggestion, index) => (
+            <li
+              key={index}
+              className="p-2 cursor-pointer hover:bg-gray-100"
+              onClick={() => handleSuggestionClick(suggestion)}
+            >
+              {suggestion}
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }
