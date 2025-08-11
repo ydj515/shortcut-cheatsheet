@@ -17,7 +17,16 @@ export const isModifierKey = (key: string): boolean => {
 
 export const formatKeyCombo = (keys: Set<string>): string => {
   return Array.from(keys)
+    .sort((a, b) => {
+      const aIsModifier = isModifierKey(a);
+      const bIsModifier = isModifierKey(b);
+      if (aIsModifier && !bIsModifier) return -1;
+      if (!aIsModifier && bIsModifier) return 1;
+      // For keys of the same type (both modifiers or both not), sort alphabetically
+      if (a < b) return -1;
+      if (a > b) return 1;
+      return 0;
+    })
     .map((k) => keyMap[k as KeyMapKey] || k.toUpperCase())
-    .sort((a) => (keyMap[a as KeyMapKey] ? -1 : 1))
     .join(" + ");
 };

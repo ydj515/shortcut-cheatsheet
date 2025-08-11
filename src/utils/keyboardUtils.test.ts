@@ -25,7 +25,20 @@ describe("keyboardUtils", () => {
   });
 });
 
-describe("formatKeyCombo sorts mapped keys lexicographically", () => {
+describe("isModifierKey edge cases", () => {
+  it("should be case sensitive for modifier keys", () => {
+    expect(isModifierKey("shift")).toBe(false);
+    expect(isModifierKey("CONTROL")).toBe(false);
+    expect(isModifierKey("ALT")).toBe(false);
+    expect(isModifierKey("META")).toBe(false);
+  });
+
+  it("should return false for an empty string", () => {
+    expect(isModifierKey("")).toBe(false);
+  });
+});
+
+describe("formatKeyCombo correctly sorts and formats keys", () => {
   beforeEach(async () => {
     // Ensure a consistent environment for these general tests, not macOS specific
     vi.stubGlobal('navigator', { userAgent: 'Windows' }); // Or any non-Mac OS
@@ -48,17 +61,20 @@ describe("formatKeyCombo sorts mapped keys lexicographically", () => {
   });
 
   it("should sort keys alphabetically regardless of input order", () => {
-    // Actual behavior: preserves insertion order as sort is stable for non-differentiated items.
-    // For Set(['B', 'A']), Array.from typically gives ['B', 'A'].
-    expect(formatKeyCombo(new Set(['B', 'A']))).toBe("B + A");
+    expect(formatKeyCombo(new Set(['B', 'A']))).toBe("A + B");
   });
 
-  // This test was originally for "modifiers first", now it tests general functionality
-  // and its exact output depends on the userAgent (non-macOS here)
-  it("formats key sets with modifiers, respecting lexicographical sort of mapped keys", () => {
-    // non-Mac: Shift -> ⇧. Modifiers first.
-    expect(formatKeyCombo(new Set(["Shift", "B"]))).toBe("⇧ + B");
-    expect(formatKeyCombo(new Set(["Alt"]))).toBe("Alt"); // Alt is already sorted if single
+  it("formats key sets with modifiers, ensuring modifiers come first", () => {
+    expect(formatKeyCombo(new Set(["B", "Shift"]))).toBe("⇧ + B");
+    expect(formatKeyCombo(new Set(["Alt"]))).toBe("Alt");
+  });
+
+  it("should handle keys that are substrings of modifiers or lowercase", () => {
+    expect(formatKeyCombo(new Set(['control', 'a']))).toBe("A + CONTROL");
+  });
+
+  it("should handle keys that match mapped values", () => {
+    expect(formatKeyCombo(new Set(['Win', 'A']))).toBe("A + WIN");
   });
 });
 
@@ -71,24 +87,18 @@ describe("formatKeyCombo on macOS", () => {
   });
 
   it("should use macOS specific symbols and sort correctly", () => {
-    // Modifiers first
-    expect(formatKeyCombo(new Set(['Meta', 'A']))).toBe("⌘ + A");
-    expect(formatKeyCombo(new Set(['Shift', 'B']))).toBe("⇧ + B");
-    expect(formatKeyCombo(new Set(['Alt', 'C']))).toBe("Option + C");
-    expect(formatKeyCombo(new Set(['Control', 'D']))).toBe("Ctrl + D");
+    expect(formatKeyCombo(new Set(['A', 'Meta']))).toBe("⌘ + A");
+    expect(formatKeyCombo(new Set(['B', 'Shift']))).toBe("⇧ + B");
+    expect(formatKeyCombo(new Set(['C', 'Alt']))).toBe("Option + C");
+    expect(formatKeyCombo(new Set(['D', 'Control']))).toBe("Ctrl + D");
   });
 
-  it("should handle multiple modifiers on macOS and sort them lexicographically", () => {
-    // Actual behavior: preserves insertion order for 'Shift', 'Control' as mapped symbols '⇧', 'Ctrl' are not keys in keyMap.
-    // For Set(['Shift', 'Control', 'A']), Array.from gives ['Shift', 'Control', 'A'] -> mapped ['⇧', 'Ctrl', 'A']
-    expect(formatKeyCombo(new Set(['Shift', 'Control', 'A']))).toBe("⇧ + Ctrl + A");
+  it("should handle multiple modifiers on macOS and sort them alphabetically", () => {
+    expect(formatKeyCombo(new Set(['A', 'Shift', 'Control']))).toBe("Ctrl + ⇧ + A");
     // Test sorting of modifier keys themselves
-    // For Set(['Shift', 'Control']), Array.from gives ['Shift', 'Control'] -> mapped ['⇧', 'Ctrl']
-    expect(formatKeyCombo(new Set(['Shift', 'Control']))).toBe("⇧ + Ctrl");
-    // Option < ⌘ - this relies on 'Option' NOT being a key in keyMap and 'Alt' (mac) mapping to 'Option'
-    // For Set(['Meta', 'Alt']), Array.from gives ['Meta', 'Alt'] -> mapped ['⌘', 'Option']
-    // keyMap['⌘'] is undefined (1), keyMap['Option'] is undefined (1). Order preserved.
-    expect(formatKeyCombo(new Set(['Meta', 'Alt']))).toBe("⌘ + Option");
+    expect(formatKeyCombo(new Set(['Shift', 'Control']))).toBe("Ctrl + ⇧");
+    // Test sorting of all modifiers
+    expect(formatKeyCombo(new Set(['Shift', 'Meta', 'Alt', 'Control']))).toBe("Option + Ctrl + ⌘ + ⇧");
   });
 });
 
@@ -101,26 +111,18 @@ describe("formatKeyCombo on non-macOS", () => {
   });
 
   it("should use non-macOS specific symbols and sort correctly", () => {
-    // Modifiers first
-    expect(formatKeyCombo(new Set(['Meta', 'A']))).toBe("Win + A");
-    expect(formatKeyCombo(new Set(['Shift', 'B']))).toBe("⇧ + B"); // Shift maps to ⇧
-    expect(formatKeyCombo(new Set(['Alt', 'C']))).toBe("Alt + C");
-    expect(formatKeyCombo(new Set(['Control', 'D']))).toBe("Ctrl + D");
+    expect(formatKeyCombo(new Set(['A', 'Meta']))).toBe("Win + A");
+    expect(formatKeyCombo(new Set(['B', 'Shift']))).toBe("⇧ + B");
+    expect(formatKeyCombo(new Set(['C', 'Alt']))).toBe("Alt + C");
+    expect(formatKeyCombo(new Set(['D', 'Control']))).toBe("Ctrl + D");
   });
 
-  it("should handle multiple modifiers on non-macOS and sort them lexicographically", () => {
-    // Actual behavior: 'Alt' is prioritized. Others preserve insertion order.
-    // For Set(['Shift', 'Control', 'A']), Array.from gives ['Shift', 'Control', 'A'] -> mapped ['⇧', 'Ctrl', 'A']
-    // None of these mapped values are 'Alt'. Their order is preserved.
-    expect(formatKeyCombo(new Set(['Shift', 'Control', 'A']))).toBe("⇧ + Ctrl + A");
+  it("should handle multiple modifiers on non-macOS and sort them alphabetically", () => {
+    expect(formatKeyCombo(new Set(['A', 'Shift', 'Control']))).toBe("Ctrl + ⇧ + A");
     // Test sorting of modifier keys themselves
-    // For Set(['Shift', 'Control']), Array.from gives ['Shift', 'Control'] -> mapped ['⇧', 'Ctrl']
-    // None are 'Alt'. Order preserved.
-    expect(formatKeyCombo(new Set(['Shift', 'Control']))).toBe("⇧ + Ctrl");
-    // Alt < Win
-    // For Set(['Meta', 'Alt']), Array.from gives ['Meta', 'Alt'] -> mapped ['Win', 'Alt']
-    // 'Alt' is a key in keyMap (-1), 'Win' is not (1). So 'Alt' comes first.
-    expect(formatKeyCombo(new Set(['Meta', 'Alt']))).toBe("Alt + Win");
+    expect(formatKeyCombo(new Set(['Shift', 'Control']))).toBe("Ctrl + ⇧");
+    // Test sorting of all modifiers
+    expect(formatKeyCombo(new Set(['Shift', 'Meta', 'Alt', 'Control']))).toBe("Alt + Ctrl + Win + ⇧");
   });
 });
 
