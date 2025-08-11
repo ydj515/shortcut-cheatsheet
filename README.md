@@ -71,3 +71,21 @@ interface Shortcut {
   keywords: string[];
 }
 ```
+
+## 프로젝트 구조
+
+```
+/
+├── public/ # 정적 파일 (favicon, manifest.json 등)
+├── src/ # 소스 코드
+│   ├── components/ # 리액트 컴포넌트
+│   ├── data/ # 단축키 데이터
+│   ├── types/ # 타입스크립트 타입 정의
+│   ├── utils/ # 유틸리티 함수
+│   ├── App.tsx # 메인 애플리케이션 컴포넌트
+│   ├── main.tsx # 애플리케이션 진입점
+│   └── index.css # 전역 스타일
+├── package.json # 프로젝트 의존성 및 스크립트
+├── vite.config.ts # Vite 설정 파일
+└── tsconfig.json # 타입스크립트 설정 파일
+```
