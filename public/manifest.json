@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Shortcut Cheatsheet",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Easily search and browse keyboard shortcuts for various tools like IntelliJ, VSCode, Figma, and more—all in one place.",
   "action": {
     "default_popup": "index.html",
