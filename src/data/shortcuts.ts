@@ -152,7 +152,7 @@ export const intellijShortcuts: Shortcut[] = [
   },
   {
     category: "intellij",
-    action: "최근 닫았던 창 목록",
+    action: "최근 닫았던(열었던) 창 목록",
     mac: "⌘ + e",
     win: "ctrl + e",
     keywords: ["closed recent files", "command"]
@@ -247,6 +247,27 @@ export const intellijShortcuts: Shortcut[] = [
     mac: "⎋ Esc",
     win: "",
     keywords: ["focus on editor"]
+  },
+  {
+    category: "intellij",
+    action: "add break point",
+    mac: "⌘ + F8",
+    win: "ctrl + F8",
+    keywords: ["break point", "debug", "command"]
+  },
+  {
+    category: "intellij",
+    action: "add bookmark",
+    mac: "F3",
+    win: "F11",
+    keywords: ["bookmark"]
+  },
+  {
+    category: "intellij",
+    action: "list bookmark",
+    mac: "⌘ + F3",
+    win: "⇧ + F11",
+    keywords: ["bookmark", "list", "command", "shift"]
   }
 ];
 
