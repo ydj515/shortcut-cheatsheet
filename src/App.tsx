@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavigationBar } from "./components/NavigationBar";
 import ShortcutCheatsheet from "./components/ShortcutCheatsheet";
-import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState("intellij");
@@ -25,7 +24,6 @@ function App() {
           <ShortcutCheatsheet selectedCategory={selectedCategory} />
         </main>
       </div>
-      <Analytics />
     </>
   );
 }
