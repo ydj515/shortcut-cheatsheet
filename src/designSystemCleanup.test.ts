@@ -1,0 +1,101 @@
+import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
+import { join, relative } from "node:path";
+import { describe, expect, it } from "vitest";
+
+const rootDir = process.cwd();
+const ignoredDirectories = new Set([
+  ".git",
+  "dist",
+  "node_modules",
+  "coverage"
+]);
+const textExtensions = new Set([
+  ".css",
+  ".d.ts",
+  ".html",
+  ".js",
+  ".jsx",
+  ".json",
+  ".md",
+  ".ts",
+  ".tsx",
+  ".txt",
+  ".xml"
+]);
+const sourceBrandPattern = new RegExp(
+  `${["wan", "ted"].join("")}|\uC6D0\uD2F0\uB4DC`,
+  "i"
+);
+
+const getExtension = (path: string) => {
+  const lastDot = path.lastIndexOf(".");
+  return lastDot === -1 ? "" : path.slice(lastDot);
+};
+
+const collectFiles = (directory: string): string[] => {
+  if (!existsSync(directory)) {
+    return [];
+  }
+
+  return readdirSync(directory).flatMap((name) => {
+    const path = join(directory, name);
+    const relativePath = relative(rootDir, path);
+
+    if (statSync(path).isDirectory()) {
+      if (ignoredDirectories.has(name)) {
+        return [];
+      }
+
+      return collectFiles(path);
+    }
+
+    return [relativePath];
+  });
+};
+
+describe("design-system cleanup", () => {
+  it("keeps app components free of React inline style props", () => {
+    const componentFiles = collectFiles(join(rootDir, "src", "components"))
+      .filter((path) => path.endsWith(".tsx"));
+
+    const offenders = componentFiles.filter((path) =>
+      readFileSync(join(rootDir, path), "utf8").includes("style={{")
+    );
+
+    expect(offenders).toEqual([]);
+  });
+
+  it("does not load fonts from CDN stylesheets", () => {
+    const textFiles = collectFiles(rootDir)
+      .filter((path) => textExtensions.has(getExtension(path)));
+
+    const offenders = textFiles.filter((path) =>
+      /cdn\.jsdelivr|fonts\.googleapis|fonts\.gstatic/i.test(
+        readFileSync(join(rootDir, path), "utf8")
+      )
+    );
+
+    expect(offenders).toEqual([]);
+  });
+
+  it("self-hosts the app font as WOFF2 instead of TTF", () => {
+    const stylesheet = readFileSync(join(rootDir, "src", "index.css"), "utf8");
+    const fontFiles = collectFiles(join(rootDir, "public", "fonts"));
+
+    expect(stylesheet).toContain("/fonts/app-sans-variable.woff2");
+    expect(stylesheet).toContain('format("woff2")');
+    expect(stylesheet).not.toMatch(/\.ttf|truetype/i);
+    expect(fontFiles).toContain("public/fonts/app-sans-variable.woff2");
+    expect(fontFiles.some((path) => path.endsWith(".ttf"))).toBe(false);
+  });
+
+  it("does not expose source design-system branding in project files", () => {
+    const paths = collectFiles(rootDir);
+    const pathOffenders = paths.filter((path) => sourceBrandPattern.test(path));
+    const contentOffenders = paths
+      .filter((path) => textExtensions.has(getExtension(path)))
+      .filter((path) => sourceBrandPattern.test(readFileSync(join(rootDir, path), "utf8")));
+
+    expect([...new Set([...pathOffenders, ...contentOffenders])]).toEqual([]);
+  });
+});

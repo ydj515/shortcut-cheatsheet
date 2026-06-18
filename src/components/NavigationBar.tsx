@@ -48,10 +48,9 @@ export const NavigationBar = ({
         <div
           className={`
             absolute left-0 top-16 w-full bg-white shadow-md z-50 border-t border-gray-200
-            transition-all duration-300 overflow-hidden
+            transition-max-height-opacity duration-300 overflow-hidden
             ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 pointer-events-none"}
           `}
-          style={{ transitionProperty: "max-height, opacity" }}
         >
           <ul className="py-2">
             {categories.map((category) => (

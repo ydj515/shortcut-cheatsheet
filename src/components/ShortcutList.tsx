@@ -49,8 +49,7 @@ export const ShortcutList = ({ shortcuts }: ShortcutListProps) => {
                         delay: index * 0.05,
                         height: { duration: 0.2 }
                       }}
-                      className="bg-white rounded-lg shadow transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
-                      style={{ borderRadius: 12, overflow: "hidden" }}
+                      className="overflow-hidden rounded-xl bg-white shadow transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
                     >
                       <td className="px-4 py-2 align-top rounded-l-lg">{action}</td>
                       <td className="px-4 py-2 align-top">{mac}</td>
