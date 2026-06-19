@@ -78,15 +78,39 @@ describe("design-system cleanup", () => {
     expect(offenders).toEqual([]);
   });
 
-  it("self-hosts the app font as WOFF2 instead of TTF", () => {
+  it("self-hosts the app font as latin and hangul WOFF2 subsets", () => {
     const stylesheet = readFileSync(join(rootDir, "src", "index.css"), "utf8");
     const fontFiles = collectFiles(join(rootDir, "public", "fonts"));
+    const subsetFonts = [
+      "public/fonts/app-sans-variable-latin.woff2",
+      "public/fonts/app-sans-variable-hangul.woff2"
+    ];
 
-    expect(stylesheet).toContain("/fonts/app-sans-variable.woff2");
+    expect(stylesheet).toContain("/fonts/app-sans-variable-latin.woff2");
+    expect(stylesheet).toContain("/fonts/app-sans-variable-hangul.woff2");
     expect(stylesheet).toContain('format("woff2")');
+    expect(stylesheet).toContain("unicode-range: U+0000-00FF");
+    expect(stylesheet).toContain("unicode-range: U+1100-11FF");
     expect(stylesheet).not.toMatch(/\.ttf|truetype/i);
-    expect(fontFiles).toContain("public/fonts/app-sans-variable.woff2");
+    expect(stylesheet).not.toContain('url("/fonts/app-sans-variable.woff2")');
+    expect(fontFiles).toEqual(expect.arrayContaining(subsetFonts));
     expect(fontFiles.some((path) => path.endsWith(".ttf"))).toBe(false);
+    expect(fontFiles).not.toContain("public/fonts/app-sans-variable.woff2");
+  });
+
+  it("preloads self-hosted font subsets for first paint", () => {
+    const indexHtml = readFileSync(join(rootDir, "index.html"), "utf8");
+
+    for (const fontPath of [
+      "/fonts/app-sans-variable-latin.woff2",
+      "/fonts/app-sans-variable-hangul.woff2"
+    ]) {
+      expect(indexHtml).toContain(`rel="preload"`);
+      expect(indexHtml).toContain(`href="${fontPath}"`);
+      expect(indexHtml).toContain(`as="font"`);
+      expect(indexHtml).toContain(`type="font/woff2"`);
+      expect(indexHtml).toContain("crossorigin");
+    }
   });
 
   it("does not expose source design-system branding in project files", () => {
