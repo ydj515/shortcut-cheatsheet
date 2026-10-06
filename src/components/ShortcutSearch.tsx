@@ -27,12 +27,6 @@ export default function ShortcutSearch({
     allKeywords.current = Array.from(keywords);
   }, [shortcuts]);
 
-  useEffect(() => {
-    if (value === '') {
-      setSuggestions([]);
-    }
-  }, [value]);
-
   const getSuggestions = (query: string) => {
     if (!query) {
       setSuggestions([]);
@@ -126,7 +120,7 @@ export default function ShortcutSearch({
         onKeyUp={handleKeyUp}
         className="w-full mb-1 p-3 border border-gray-300 rounded"
       />
-      {suggestions.length > 0 && (
+      {value !== "" && suggestions.length > 0 && (
         <ul className="absolute z-10 w-full bg-white border border-gray-300 rounded-md mt-1 max-h-60 overflow-y-auto shadow-lg">
           {suggestions.map((suggestion, index) => (
             <li
