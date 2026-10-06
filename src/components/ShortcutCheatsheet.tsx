@@ -1,10 +1,10 @@
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { allShortcuts } from "../data/shortcuts";
 import type { Shortcut } from "../types/shortcut";
 import ShortcutSearch from "./ShortcutSearch";
 import { ShortcutList } from "./ShortcutList";
 
-export default function ShortcutCheatsheet({
+function CategoryCheatsheet({
   selectedCategory,
 }: {
   selectedCategory: string;
@@ -16,11 +16,6 @@ export default function ShortcutCheatsheet({
 
   const [filtered, setFiltered] = useState<Shortcut[]>(categoryShortcuts);
   const [query, setQuery] = useState("");
-
-  useEffect(() => {
-    setFiltered(categoryShortcuts);
-    setQuery("");
-  }, [categoryShortcuts]);
 
   const handleSearch = useCallback((results: Shortcut[]) => {
     setFiltered(results);
@@ -40,4 +35,8 @@ export default function ShortcutCheatsheet({
       <ShortcutList shortcuts={filtered} />
     </div>
   );
+}
+
+export default function ShortcutCheatsheet({ selectedCategory }: { selectedCategory: string }) {
+  return <CategoryCheatsheet key={selectedCategory} selectedCategory={selectedCategory} />;
 }

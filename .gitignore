@@ -26,3 +26,14 @@ dist-ssr
 
 # DesignSystem
 design-system
+
+# Personal mise environments and credentials
+mise.local.toml
+mise.*.local.toml
+mise.local.lock
+mise.*.local.lock
+.miserc.local.toml
+.env
+.env.*
+!.env.example
+!.env.*.example

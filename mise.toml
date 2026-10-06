@@ -1,5 +1,18 @@
+min_version = "2026.9.18"
+
+[settings]
+lockfile = true
+lockfile_platforms = ["macos-arm64", "linux-x64"]
+
+[vars]
+runtime_env = "local"
+vite_mode = "production"
+
+[env]
+APP_ENV = "{{ vars.runtime_env }}"
+
 [tools]
-node = "24.13.0"
+node = "24.19.0"
 
 [tasks.default]
 description = "Default task (runs dev)"
@@ -10,22 +23,53 @@ alias = "s"
 description = "Install dependencies"
 depends = ["install"]
 
-[tasks.install]
-alias = "i"
+[tasks."install"]
 description = "Install dependencies"
-run = "npm install"
+alias = "i"
+run = "npm ci --include=dev"
 
-[tasks.dev]
-alias = "d"
+[tasks."dev"]
 description = "Run the application"
+alias = "d"
+depends = ["guard:local"]
 run = "npm run dev"
 
-[tasks.build]
-alias = "b"
+[tasks."build"]
 description = "Build the application"
-run = "npm run build"
+alias = "b"
+run = "npm run build -- --mode {{ vars.vite_mode | quote }}"
 
-[tasks.preview]
-alias = "p"
+[tasks."preview"]
 description = "Preview the production build"
+alias = "p"
+depends = ["guard:local"]
 run = "npm run preview"
+
+[tasks."bootstrap"]
+description = "Install locked tools and project dependencies; do not start services"
+run = "mise install --locked node@24.19.0\nmise run install"
+
+[tasks."config:check"]
+description = "Validate task references without starting applications"
+run = "mise tasks validate --errors-only"
+
+[tasks."test"]
+description = "Run Vitest once"
+run = "npm run test -- --run"
+
+[tasks."lint"]
+description = "Run ESLint"
+run = "npm run lint"
+
+[tasks."verify"]
+description = "Run lint, tests and production build"
+run = "mise run lint\nmise run test\nmise run build"
+
+[tasks."ci"]
+description = "Run verification"
+run = "mise run verify"
+
+[tasks."guard:local"]
+description = "Reject local services under a production environment"
+hide = true
+run = "case \"$APP_ENV\" in local|dev|development) ;; *) echo 'Local services require the default or dev environment' >&2; exit 1 ;; esac"
