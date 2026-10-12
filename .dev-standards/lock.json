@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "source": {
     "repository": "ydj515/dev-standards",
-    "requestedRef": "v1.5.0",
-    "resolvedRef": "v1.5.0",
-    "commit": "52aa44ec3374d0d8d570fec9c26399f39406d5db"
+    "requestedRef": "v1.5.1",
+    "resolvedRef": "v1.5.1",
+    "commit": "1c697564334aa64f822238ba434b9f24d911bdbd"
   },
   "config": {
     "path": ".dev-standards/config.yaml",
@@ -152,7 +152,7 @@
     },
     ".dev-standards/styleguide.md": {
       "ownership": "managed",
-      "sha256": "e834ab236ee0227328b66e79239a33392cbc9b636a8c78eb58b66358d5e31e1e"
+      "sha256": "474963df876a6ca90a082c773e0cf3debae0a4cf2256fb4fc279b8685808fca0"
     },
     "AGENTS.md": {
       "ownership": "project-owned"
