@@ -1,113 +1,81 @@
-# Shortcut Repository
+# Shortcut Cheatsheet
 
-온보딩 및 협업을 위해 프로그램별 단축키 검색을 지원하는 프로젝트입니다. 한글, 영어 그리고 key stroke로 검색이 가능합니다.
+[![Sync Development Standards](https://github.com/ydj515/shortcut-cheatsheet/actions/workflows/sync-dev-standards.yml/badge.svg)](https://github.com/ydj515/shortcut-cheatsheet/actions/workflows/sync-dev-standards.yml)
+[![Node.js 24.19.0](https://img.shields.io/badge/Node.js-24.19.0-339933?logo=nodedotjs&logoColor=white)](./mise.toml)
+[![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](./package.json)
+[![TypeScript 5.8](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](./package.json)
+[![Vite 8](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](./package.json)
 
-배포된 웹은 [링크](https://shortcut-cheatsheet.vercel.app/)에서 확인해주세요. ([관련포스팅](https://ydj515.github.io/posts/shortcut/))
+온보딩과 협업을 위해 개발 도구 및 오피스 프로그램의 단축키를 한곳에서 빠르게 찾아볼 수 있는 웹 치트시트입니다.
+한글·영어 키워드 검색과 키워드 자동완성은 물론, 실제 키보드 조합(Keystroke) 입력을 실시간으로 감지해 macOS와 Windows 단축키를 즉시 비교할 수 있습니다.
 
-![alt text](./docs/demo.png)
+- **배포 데모:** [shortcut-cheatsheet.vercel.app](https://shortcut-cheatsheet.vercel.app/)
+- **관련 포스팅:** [단축키 치트시트 제작기](https://ydj515.github.io/posts/shortcut/)
 
-지원되는 프로그램 목록은 다음과 같습니다.
+**기술 스택:** React 19 · TypeScript · Vite 8 · Tailwind CSS 4 · Vitest · mise
 
-- Intellij
-- vscode
-- figma
-- powerpoint
-- excel
-- word
-- 한글
+![Shortcut Cheatsheet Demo](./docs/demo.png)
 
-## usage
+## 주요 기능
 
-1. 왼쪽 사이드바에서 원하는 카테고리(Figma 또는 IntelliJ)를 선택합니다.
-2. 검색창에서 다음 방법으로 검색할 수 있습니다:
-   - 텍스트로 검색 (예: "자동완성", "컴포넌트" 등)
-   - 단축키 조합으로 검색 (예: ⌘ + N, Ctrl + Space 등)
-3. 검색 결과는 실시간으로 업데이트됩니다.
+- **프로그램별 단축키 카탈로그:** IntelliJ IDEA, VS Code, Figma, Excel, PowerPoint, Word, 한글(HWP) 7개 카테고리의 주요 단축키와 macOS / Windows 키 매핑을 제공합니다.
+- **멀티 모달 실시간 검색:** 기능 설명 및 한·영 별칭(`keywords`) 텍스트 검색, 자동완성 추천 목록, 실제 키보드 입력(`⌘ + N`, `Ctrl + Shift + P`, `F1`~`F12` 등) 감지를 통한 즉시 검색을 지원합니다.
+- **반응형 레이아웃:** 데스크톱 사이드바와 모바일 상단 내비게이션을 지원하며, 별도 백엔드 없이 정적 웹 애플리케이션으로 빠르게 동작합니다.
 
-## environment
+## 요구 사항
 
-- React 19
-- TypeScript
-- Tailwind CSS 4
-- Vite / Vitest
+- [mise](https://mise.jdx.dev/) — Node.js 버전(`24.19.0`)은 [`mise.toml`](./mise.toml)에 고정되어 있으며 `mise`가 설치합니다.
 
-## prerequisite
+## 빠른 시작
 
-- Node.js 20 (최신 LTS 버전 권장)
-- npm
-
-## project setup
-
-```sh
-npm install
+```bash
+mise trust ./mise.toml  # 최초 1회, mise.toml 검토 후 신뢰
+mise run bootstrap      # 고정된 Node.js 설치 + 의존성 설치 (npm ci)
+mise run dev            # 개발 서버 실행
 ```
 
-### run dev
+터미널에 표시된 주소(기본 `http://localhost:5173`)를 여세요.
+왼쪽 사이드바(모바일은 상단 탭)에서 원하는 프로그램을 선택한 뒤, 검색창에 텍스트(예: `"자동완성"`, `"컴포넌트"`)를 입력하거나 찾을 단축키 조합을 직접 눌러 바로 검색할 수 있습니다.
 
-```sh
-npm run dev
-```
+`mise` 없이 로컬 Node.js 환경을 직접 사용할 때는 `npm install && npm run dev`로 실행할 수 있습니다.
 
-### build
+## 주요 명령
 
-```sh
-npm run build
-```
+| 명령 | 설명 |
+| --- | --- |
+| `mise run bootstrap` | 고정된 Node.js(`24.19.0`) 설치 및 패키지 의존성 설치 |
+| `mise run dev` | Vite 개발 서버 실행 |
+| `mise run test` | Vitest 단위·컴포넌트 테스트 실행 |
+| `mise run lint` | ESLint 코드 정적 분석 실행 |
+| `mise run build` | TypeScript 타입체크(`tsc -b`) 및 프로덕션 번들 빌드 |
+| `mise run preview` | 프로덕션 빌드 결과물 로컬 미리보기 |
+| `mise run config:check` | `mise` 태스크 참조 및 순환 의존성 검사 |
+| `mise run verify` | `lint` + `test` + `build` 통합 검증 |
 
-### test
-
-```sh
-npm run test # npx vitest
-```
-
-## 단축키 데이터 구조
-
-```typescript
-interface Shortcut {
-  category: 'figma' | 'intellij';
-  action: string;
-  mac: string;
-  win: string;
-  keywords: string[];
-}
-```
+전체 task 목록은 `mise tasks`로 확인할 수 있습니다. `dev`/`prod` 환경 프로필(`-E dev`, `-E prod`)과 개인 설정(`mise.dev.local.toml`) 등 상세 정책은 [기여 및 개발 가이드의 mise 환경 구성](./docs/contributor-guide.md#mise-환경-구성-및-프로필-정책)을 참고하세요.
 
 ## 프로젝트 구조
 
-```
-/
-├── public/ # 정적 파일 (favicon, manifest.json 등)
-├── src/ # 소스 코드
-│   ├── components/ # 리액트 컴포넌트
-│   ├── data/ # 단축키 데이터
-│   ├── types/ # 타입스크립트 타입 정의
-│   ├── utils/ # 유틸리티 함수
-│   ├── App.tsx # 메인 애플리케이션 컴포넌트
-│   ├── main.tsx # 애플리케이션 진입점
-│   └── index.css # 전역 스타일
-├── package.json # 프로젝트 의존성 및 스크립트
-├── vite.config.ts # Vite 설정 파일
-└── tsconfig.json # 타입스크립트 설정 파일
-```
-
-## mise 환경과 초기 설정
-
-`mise.toml`은 도구·공통 task, `mise.dev.toml`/`mise.prod.toml`은 공유 환경 선택을 담당한다.
-
-```bash
-mise trust ./mise.toml   # task와 overlay를 검토한 뒤 신뢰
-mise run bootstrap     # 고정된 버전의 도구 설치 후 의존성 준비
-mise run config:check  # task 참조·순환 검사, 앱 실행 없음
-mise run verify        # 프로젝트 검증 (Docker 등 기존 검증 전제는 유지)
-mise -E dev run verify
+```text
+.
+├── docs/                       # 데모 이미지 및 기여·개발 가이드 문서
+├── public/                     # 정적 에셋 (아이콘, 파비콘 등)
+├── src/
+│   ├── components/             # 카테고리 내비게이션, 키스트로크 검색창, 단축키 테이블 UI
+│   ├── data/                   # 카테고리 목록(categories.ts) 및 단축키 데이터(shortcuts.ts)
+│   ├── types/                  # 단축키·카테고리 TypeScript 타입 계약
+│   ├── utils/                  # OS 감지 및 키 조합 포맷팅 유틸리티와 단위 테스트
+│   ├── App.tsx                 # 반응형 레이아웃 및 카테고리 상태 연결
+│   └── main.tsx                # 애플리케이션 진입점
+├── CONTRIBUTING.md             # 기여 절차 요약
+└── mise.toml                   # 고정 도구 버전(Node.js 24) 및 공통 태스크 정의
 ```
 
-- 기본 실행은 `APP_ENV=local`, `-E dev`는 개발 overlay, `-E prod`는 운영 설정 선택이다. 환경 선택 자체가 배포나 서비스 시작을 수행하지 않는다.
-- 개인 개발 설정은 `mise.dev.local.toml.example`을 검토해 `mise.dev.local.toml`로 복사한다. `.env.dev.local`을 만든 뒤 `env._.file`을 활성화하면 dev에서만 읽는다. 기존 개인 파일을 덮어쓰지 않는다.
-- `mise.local.toml`은 **모든 환경**에서 로드된다. prod checkout에 개인 override나 개발 dotenv를 두지 않는다. `-E local`은 사용하지 않는다.
-- `APP_ENV`는 공통 환경 식별자다. 애플리케이션의 기존 실행·배포 설정은 유지한다.
-- Vite 앱의 `build`는 기본/ prod에서 `production`, dev에서 `development` mode를 사용한다. Next.js는 자체 dev/build 모드를 유지한다. `NODE_ENV`를 전역 production으로 설정하지 않아 개발 의존성 설치가 누락되지 않는다.
-- mise는 개발 도구의 정확한 버전 고정과 프로필 분리에 사용한다. `[settings] lockfile = false`로 도구 lock 생성을 끄고 `mise.lock`은 관리하지 않는다. 공통 표준의 mise lock 지침보다 이 저장소의 정책을 우선한다. 설치 파일까지 고정해야 하는 요구가 생기면 다시 도입한다.
-- 도구 버전은 `mise.toml`의 `[tools]`에서 관리하며 dev/prod에서도 같은 버전을 사용한다. 로컬과 CI는 `mise install` 또는 같은 정확한 버전의 setup action으로 도구를 준비한다. `package-lock.json`, `pnpm-lock.yaml`, `uv.lock`, Gradle lock 등 애플리케이션 의존성 잠금과 검증 옵션은 유지한다.
-- 지원 OS는 각 도구와 실행 스크립트의 호환성에 따른다. mise lock을 사용하지 않는다고 Windows 실행까지 보장되는 것은 아니다.
-- `mise run bootstrap`은 프로젝트 초기 설정이다. OS package·dotfile·서비스를 관리하는 `mise bootstrap`은 개인 머신 설정에서 별도로 채택한다.
+## 문서
+
+- [기여 및 개발 가이드 (mise 환경 구성 정책)](./docs/contributor-guide.md)
+- [저장소 작업 규칙](./AGENTS.md)
+
+## 기여
+
+변경 전 [기여 가이드](./CONTRIBUTING.md)를 확인해 주세요.
