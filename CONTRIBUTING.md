@@ -4,7 +4,7 @@ Shortcut Cheatsheet에 기여해 주셔서 감사합니다. 변경 사항을 제
 
 ## 1. 개발 환경 준비
 
-Node.js 버전(`24.19.0`)과 공통 작업은 [`mise.toml`](./mise.toml)에 정의되어 있습니다.
+Node.js 버전(`24.22.3`)과 공통 작업은 [`mise.toml`](./mise.toml)에 정의되어 있습니다.
 
 ```bash
 mise trust ./mise.toml

@@ -1,7 +1,7 @@
 # Shortcut Cheatsheet
 
 [![Sync Development Standards](https://github.com/ydj515/shortcut-cheatsheet/actions/workflows/sync-dev-standards.yml/badge.svg)](https://github.com/ydj515/shortcut-cheatsheet/actions/workflows/sync-dev-standards.yml)
-[![Node.js 24.19.0](https://img.shields.io/badge/Node.js-24.19.0-339933?logo=nodedotjs&logoColor=white)](./mise.toml)
+[![Node.js 24.22.3](https://img.shields.io/badge/Node.js-24.22.3-339933?logo=nodedotjs&logoColor=white)](./mise.toml)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](./package.json)
 [![TypeScript 5.8](https://img.shields.io/badge/TypeScript-5.8-3178C6?logo=typescript&logoColor=white)](./package.json)
 [![Vite 8](https://img.shields.io/badge/Vite-8-646CFF?logo=vite&logoColor=white)](./package.json)
@@ -24,7 +24,7 @@
 
 ## 요구 사항
 
-- [mise](https://mise.jdx.dev/) — Node.js 버전(`24.19.0`)은 [`mise.toml`](./mise.toml)에 고정되어 있으며 `mise`가 설치합니다.
+- [mise](https://mise.jdx.dev/) — Node.js 버전(`24.22.3`)은 [`mise.toml`](./mise.toml)에 고정되어 있으며 `mise`가 설치합니다.
 
 ## 빠른 시작
 
@@ -43,7 +43,7 @@ mise run dev            # 개발 서버 실행
 
 | 명령 | 설명 |
 | --- | --- |
-| `mise run bootstrap` | 고정된 Node.js(`24.19.0`) 설치 및 패키지 의존성 설치 |
+| `mise run bootstrap` | 고정된 Node.js(`24.22.3`) 설치 및 패키지 의존성 설치 |
 | `mise run dev` | Vite 개발 서버 실행 |
 | `mise run test` | Vitest 단위·컴포넌트 테스트 실행 |
 | `mise run lint` | ESLint 코드 정적 분석 실행 |

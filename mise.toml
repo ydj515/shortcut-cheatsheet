@@ -11,7 +11,7 @@ vite_mode = "production"
 APP_ENV = "{{ vars.runtime_env }}"
 
 [tools]
-node = "24.19.0"
+node = "24.22.3"
 
 [tasks.default]
 description = "Default task (runs dev)"
@@ -46,7 +46,7 @@ run = "npm run preview"
 
 [tasks."bootstrap"]
 description = "Install pinned tools and project dependencies; do not start services"
-run = "mise install node@24.19.0\nmise run install"
+run = "mise install node@24.22.3\nmise run install"
 
 [tasks."config:check"]
 description = "Validate task references without starting applications"

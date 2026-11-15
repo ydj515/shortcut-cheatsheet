@@ -4,7 +4,7 @@
 
 ## 요구 사항 및 초기 설정
 
-Node.js 버전(`24.19.0`)과 공통 작업은 [`mise.toml`](../mise.toml)에 고정되어 있습니다.
+Node.js 버전(`24.22.3`)과 공통 작업은 [`mise.toml`](../mise.toml)에 고정되어 있습니다.
 
 ```bash
 mise trust ./mise.toml   # 최초 1회, task와 overlay를 검토한 뒤 신뢰
